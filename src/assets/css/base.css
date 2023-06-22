@@ -1,0 +1,179 @@
+* {
+  box-sizing: border-box;
+  font-family: 'TT Firs Neue Trl';
+}
+* {
+  box-sizing: border-box;
+  font-family: 'Halyard Display';
+}
+#app{
+  overflow-x: hidden;
+}
+.font-family-lora{
+  font-family: 'Lora';
+}
+.h-100-vh{
+  height: 100vh;
+}
+.h-120-vh{
+  height: 120vh;
+}
+.h-100{
+  height: 100%;
+}
+.container{
+  width: 90%;
+}
+.w-full{
+  width: 100%;
+}
+.m-auto{
+  margin: auto;
+}
+html {
+  scroll-behavior: smooth;
+}
+body{
+    overflow-x: hidden;
+}
+
+.d-flex{
+  display: flex;
+}
+
+.text-align-center{
+  text-align: center;
+}
+.justify-content-space-between{
+  justify-content: space-between;
+}
+.justify-content-center{
+  justify-content: center;
+}
+
+.align-items-center{
+  align-items: center;
+}
+
+.align-items-end{
+  align-items: end;
+}
+
+.flex-direction-column{
+  flex-direction: column;
+}
+
+ul{
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: 0px !important;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+button{
+  cursor: pointer;
+}
+
+.button-effect{
+  background: #bb8824;
+  transition: 0.6s;
+}
+
+.mt-2{
+  margin-top: 1.5rem;
+}
+
+.button-effect:hover{
+  background: #000000;
+  
+}
+
+.button-effect-white{
+  background: #bb8824;
+  transition: 0.6s;
+}
+
+.flex-wrap{
+  flex-wrap: wrap;
+}
+
+
+
+.button-effect-white:hover{
+  background: #fff;
+  color: #000000;
+}
+
+a{
+  color: unset;
+}
+a:hover{
+  color: unset !important;
+}
+
+.icon-plus-animated .icon{
+  transform: rotate(0deg);
+  transition: 0.4s;
+}
+
+.icon-plus-animated:hover .icon {
+  transform: rotate(360deg);
+  transition: 0.4s;
+}
+
+.w-78-percent{
+  width: 78%;
+}
+
+.custom-input-filter .el-input__wrapper,.custom-input-filter .el-textarea__inner{
+  box-shadow: none;
+  padding: 6px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.7);
+}
+
+.custom-input-filter .el-input__wrapper.is-focus, .custom-input-date .el-input__wrapper.is-focus,.custom-input-filter .el-textarea__inner:focus{
+  box-shadow: none;
+}
+
+.custom-input-date .el-input__wrapper{
+  box-shadow: none;
+  padding: 6px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.7);
+}
+
+.text-align-end{
+  text-align: end;
+}
+
+
+.custom-select-input {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.7);
+}
+.custom-select-input .el-input__wrapper, .custom-select-input .el-input__wrapper.is-focus{
+  box-shadow: none !important;
+}
+.el-select .el-input.is-focus .el-input__wrapper{
+  box-shadow: none !important;
+}
+
+.flex-no-wrap{
+  flex-wrap: nowrap;
+}
+
+.border-radius-4{
+  border-radius: 4px;
+}
