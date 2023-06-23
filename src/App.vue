@@ -8,10 +8,7 @@
 
 <style></style>
 
-<style>
-@import '@/assets/css/base.css';
-@import '@/assets/css/font.css';
-</style>
+<style></style>
 
 <script setup lang="ts">
 import { onMounted, reactive, watch } from 'vue'
@@ -24,7 +21,6 @@ const data = reactive({
 watch(
   () => route.name,
   () => {
-    console.log('route.meta.layout', route.meta.layout)
     data.layout = route.meta.layout as any
   }
 )

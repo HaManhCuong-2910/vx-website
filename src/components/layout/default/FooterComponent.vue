@@ -19,15 +19,6 @@
               >Trang chủ</router-link
             >
           </li>
-          <li>
-            <router-link
-              :to="{
-                name: 'about'
-              }"
-            >
-              Về chúng tôi
-            </router-link>
-          </li>
           <li>Tin Tức</li>
           <li>Nổi Bật</li>
         </ul>
@@ -40,7 +31,6 @@
               >Trang chủ</router-link
             >
           </li>
-          <li>Về chúng tôi</li>
           <li>Tin Tức</li>
           <li>Nổi Bật</li>
         </ul>

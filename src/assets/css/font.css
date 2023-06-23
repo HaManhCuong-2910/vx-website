@@ -1,4 +1,11 @@
 @font-face {
-  font-family: SVN-Helvetica Now;
-  src: url('@/assets/font/SNV Helvetica now/SVN-Helvetica Now Display Regular.otf');
+  font-family: SVN-TT Hoves;
+  src: url('@/assets/font/SVN-TT Hoves Regular.otf');
 }
+
+@font-face {
+  font-family: SVN-Helvetica Now;
+  src: url('@/assets/font/SVN-Helvetica Now Text Regular.otf');
+}
+
+

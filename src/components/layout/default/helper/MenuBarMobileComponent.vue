@@ -17,31 +17,6 @@
                 >Trang chủ</router-link
               >
             </li>
-            <li>
-              <router-link
-                :to="{
-                  name: 'about'
-                }"
-              >
-                Về chúng tôi
-              </router-link>
-            </li>
-            <li>
-              <router-link
-                :to="{
-                  name: 'home'
-                }"
-                >Tin Tức</router-link
-              >
-            </li>
-            <li>
-              <router-link
-                :to="{
-                  name: 'home'
-                }"
-                >Nổi Bật</router-link
-              >
-            </li>
           </ul>
         </div>
         <font-awesome-icon

@@ -1,10 +1,8 @@
 <template>
-  <div>
-    <HeaderComponent />
-    <slot />
-    <FooterComponent />
-    <BackToTopButtonComponent />
-  </div>
+  <HeaderComponent />
+  <slot />
+  <!-- <FooterComponent /> -->
+  <!-- <BackToTopButtonComponent /> -->
 </template>
 
 <style scoped lang="scss"></style>
