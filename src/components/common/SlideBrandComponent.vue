@@ -158,7 +158,6 @@ const onSetActive = (event, isActive: boolean) => {
   console.log('event', event)
   const el = event.target.querySelector('img') || event.target
   if (el) {
-    const currentSrc = el.src
     if (isActive) {
       el.src = '/icon/next-icon-active.png'
     } else {
