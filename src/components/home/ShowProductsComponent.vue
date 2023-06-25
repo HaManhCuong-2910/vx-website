@@ -3,16 +3,44 @@
     <div class="flex flex-wrap">
       <div class="contain-img">
         <img src="/img/anh_home_1.png" />
-        <p class="text-ps-center">Awareness is the greatest agent for change.</p>
+        <p class="text-ps text-ps-center">Awareness is the greatest agent for change.</p>
+        <div class="child-hover">
+          <p class="title-hover">Zenture Retreat Resort</p>
+          <p class="content-hover">HOSPITALITY</p>
+        </div>
       </div>
       <div class="contain-img">
         <img src="/img/anh_home_2.png" />
+        <p class="text-ps text-ps-bottom-left">
+          A delivery service <br />
+          you cand depend on
+        </p>
+        <div class="child-hover">
+          <p class="title-hover">Zenture Retreat Resort</p>
+          <p class="content-hover">HOSPITALITY</p>
+        </div>
       </div>
       <div class="contain-img">
         <img src="/img/anh_home_3.png" />
+        <p class="text-ps text-ps-bottom-right">
+          SPACE FOR <br />
+          ART & FUTURE
+        </p>
+        <div class="child-hover">
+          <p class="title-hover">Zenture Retreat Resort</p>
+          <p class="content-hover">HOSPITALITY</p>
+        </div>
       </div>
       <div class="contain-img">
         <img src="/img/anh_home_4.png" />
+        <p class="text-ps text-ps-top-right">
+          <span class="text-travel">Always be</span> <br />
+          there for you
+        </p>
+        <div class="child-hover">
+          <p class="title-hover">Zenture Retreat Resort</p>
+          <p class="content-hover">HOSPITALITY</p>
+        </div>
       </div>
     </div>
   </div>
@@ -43,23 +71,105 @@ const listImage = ref([
 }
 .contain-img {
   width: 50%;
+  height: 674px;
   position: relative;
-
+  cursor: pointer;
+  overflow: hidden;
   img {
     width: 100%;
+    height: 100%;
+  }
+  .child-hover {
+    visibility: hidden;
+    padding: 10px 100px;
+
+    .title-hover {
+      font-size: 19px;
+      font-weight: 500;
+      line-height: 43px;
+      letter-spacing: 0.95px;
+      text-transform: uppercase;
+      transform: translateY(-30px);
+    }
+
+    .content-hover {
+      font-size: 15px;
+      line-height: 26px;
+      letter-spacing: 0.9px;
+      text-transform: uppercase;
+      opacity: 0;
+    }
+  }
+  &:hover {
+    img {
+      transform: scale(1.1);
+      transition: 0.5s;
+    }
+    .child-hover {
+      transition: 0.5s;
+      visibility: visible;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      background-color: rgba(0, 0, 0, 0.25);
+
+      .title-hover {
+        transition: 0.5s;
+        transform: translateY(0px);
+      }
+
+      .content-hover {
+        transition: 0.5s;
+        opacity: 1;
+      }
+    }
+  }
+
+  .text-ps {
+    position: absolute;
+    letter-spacing: 0.01px;
   }
 
   .text-ps-center {
-    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #fff;
     text-align: center;
     font-size: 60.018px;
     font-family: SangBleu Sunrise;
     line-height: 64.786px;
-    letter-spacing: -1.801px;
+  }
+
+  .text-ps-bottom-left {
+    bottom: 49px;
+    left: 49px;
+    font-size: 45.423px;
+    font-weight: 600;
+    line-height: 54px;
+    text-transform: uppercase;
+  }
+
+  .text-ps-bottom-right {
+    bottom: 49px;
+    right: 49px;
+    font-size: 45.423px;
+    font-weight: 600;
+    line-height: 54px;
+    text-transform: uppercase;
+  }
+
+  .text-ps-top-right {
+    top: 49px;
+    right: 49px;
+    font-size: 70px;
+    font-weight: 500;
+    line-height: 71px;
+
+    .text-travel {
+      color: #27ccac;
+    }
   }
 }
 </style>

@@ -13,8 +13,9 @@ import store from '@/store'
 import VueCookies from 'vue3-cookies'
 import ScrollReveal from 'scrollreveal'
 
-import '@/assets/css/base.css';
-import '@/assets/css/font.css';
+import '@/assets/css/base.css'
+import '@/assets/css/font.css'
+import 'swiper/css'
 
 library.add(fas, fab, far)
 export function registerGlobalComponent(app: any) {

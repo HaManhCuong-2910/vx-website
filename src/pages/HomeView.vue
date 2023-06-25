@@ -4,6 +4,7 @@
   </div>
   <MissionComponentVue />
   <ShowProductsComponentVue />
+  <AvisComponentVue />
 </template>
 
 <style lang="scss" scoped>
@@ -31,6 +32,7 @@
 </style>
 
 <script setup lang="ts">
+import AvisComponentVue from '@/components/home/AvisComponent.vue'
 import IntroHomeComponentVue from '@/components/home/IntroHomeComponent.vue'
 import MissionComponentVue from '@/components/home/MissionComponent.vue'
 import ShowProductsComponentVue from '@/components/home/ShowProductsComponent.vue'

@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-159 mb-159 h-100-vh">
+  <div class="mt-159 mb-159">
     <div class="w-60 ml-auto">
       <div class="title">
         <h2>Năng lực chuyên môn của chúng tôi</h2>
@@ -102,7 +102,7 @@ const switchCard = (index) => {
   margin-top: 159px;
 }
 .mb-159 {
-  padding-bottom: 159px;
+  margin-bottom: 159px;
 }
 .w-60 {
   width: 60%;
