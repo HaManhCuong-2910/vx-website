@@ -22,7 +22,7 @@
           </div>
 
           <div class="list-content" v-if="cardActive === index">
-            <div class="grid grid-cols-2 gap-x-20 gap-y-2">
+            <div class="grid grid-cols-2 gap-x-10 gap-y-1">
               <div v-for="contentItem in item.listContent" :key="contentItem">
                 <p>+ {{ contentItem }}</p>
               </div>
@@ -34,7 +34,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 const cardActive = ref(0)
 const listCard = ref([
@@ -144,11 +144,11 @@ const switchCard = (index) => {
       .list-content {
         p {
           color: #ddd;
-          font-size: 20px;
+          font-size: 16px;
           font-weight: 300;
           line-height: 29px;
         }
-        margin-right: 100px;
+        margin-right: 50px;
       }
     }
     img {
@@ -159,7 +159,7 @@ const switchCard = (index) => {
       max-width: 357px;
       p {
         color: #fff;
-        font-size: 17px;
+        font-size: 16px;
         line-height: 22px;
         margin-top: 26px;
       }
@@ -167,7 +167,7 @@ const switchCard = (index) => {
     .count,
     h2 {
       color: rgba(255, 255, 255, 0.25);
-      font-size: 36px;
+      font-size: 34px;
       font-weight: 500;
       line-height: 43px;
       letter-spacing: -0.36px;
@@ -176,14 +176,6 @@ const switchCard = (index) => {
     .count {
       margin-left: 24px;
     }
-  }
-}
-@keyframes fade {
-  0% {
-    opacity: 0.3;
-  }
-  100% {
-    opacity: 1;
   }
 }
 </style>

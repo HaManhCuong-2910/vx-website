@@ -43,8 +43,8 @@
     text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     font-size: 65px;
     font-weight: 500;
-    line-height: 92px;
-    letter-spacing: -0.8px;
+    line-height: 85px;
+    letter-spacing: -2.44px;
     margin-top: 30px;
   }
 }

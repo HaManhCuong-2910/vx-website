@@ -94,6 +94,14 @@
     .custom-slide-item {
       position: relative;
       width: 70%;
+      overflow: hidden;
+      &:hover {
+        img {
+          transition: 0.5s;
+          transform: scale(1.1);
+        }
+      }
+
       img {
         width: 100%;
         height: 750px;
@@ -155,7 +163,6 @@ import { onMounted, PropType } from 'vue'
 const modules = [Navigation]
 
 const onSetActive = (event, isActive: boolean) => {
-  console.log('event', event)
   const el = event.target.querySelector('img') || event.target
   if (el) {
     if (isActive) {

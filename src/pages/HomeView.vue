@@ -5,6 +5,10 @@
   <MissionComponentVue />
   <ShowProductsComponentVue />
   <AvisComponentVue />
+  <PartnerComponentVue />
+  <div class="mt-250">
+    <ListServiceComponentVue />
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -29,11 +33,16 @@
     height: 100%;
   }
 }
+.mt-250 {
+  margin-top: 250px;
+}
 </style>
 
-<script setup lang="ts">
+<script setup>
+import ListServiceComponentVue from '@/components/common/ListServiceComponent.vue'
 import AvisComponentVue from '@/components/home/AvisComponent.vue'
 import IntroHomeComponentVue from '@/components/home/IntroHomeComponent.vue'
 import MissionComponentVue from '@/components/home/MissionComponent.vue'
+import PartnerComponentVue from '@/components/home/PartnerComponent.vue'
 import ShowProductsComponentVue from '@/components/home/ShowProductsComponent.vue'
 </script>

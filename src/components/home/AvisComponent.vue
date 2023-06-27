@@ -29,10 +29,11 @@ import SlideBrandComponent from '@/components/common/SlideBrandComponent.vue'
 }
 h2 {
   color: #fff;
-  font-size: 72px;
+  font-size: 65px;
   font-weight: 500;
   line-height: 85px;
-  letter-spacing: -1.44px;
+  letter-spacing: -2.44px;
+  margin-top: 30px;
 }
 
 .container-mal {

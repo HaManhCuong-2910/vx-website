@@ -10,7 +10,7 @@ router.beforeEach(async (to, from, next) => {
   const documentRoute: any = document
 
   // set page title
-  documentRoute.title = to.meta.title ? to.meta.title : 'REW 3'
+  documentRoute.title = to.meta.title ? to.meta.title : 'VX Website'
   next()
 })
 

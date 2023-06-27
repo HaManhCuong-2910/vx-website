@@ -24,7 +24,6 @@ import HomeInFormationVue from './HomeInformaitionComponent.vue'
   z-index: 10;
   padding-top: 479px;
   .container-text {
-    padding: 0px 100px;
     justify-content: space-between;
     align-items: flex-end;
     padding-bottom: 161px;
