@@ -1,7 +1,7 @@
 <template>
   <HeaderComponent />
   <slot />
-  <!-- <FooterComponent /> -->
+  <FooterComponent />
   <!-- <BackToTopButtonComponent /> -->
 </template>
 

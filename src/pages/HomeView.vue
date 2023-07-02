@@ -8,7 +8,7 @@
   <PartnerComponentVue />
   <div class="mt-250 bg-service">
     <ListServiceComponentVue />
-    <div class="mt-250">
+    <div class="mt-250 pb-100 relative z-10">
       <ConnectUsComponent />
     </div>
   </div>
@@ -39,10 +39,13 @@
 .mt-250 {
   margin-top: 250px;
 }
+.pb-100 {
+  padding-bottom: 100px;
+}
 .bg-service {
   background-image: url('/img/brand_background.png');
   background-repeat: no-repeat;
-  background-position: 15% 20%;
+  background-position: 15% 100%;
   background-size: cover;
   position: relative;
   &::before {

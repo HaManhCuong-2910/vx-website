@@ -112,7 +112,7 @@
   padding: 30px 0px;
   background: rgba(255, 255, 255, 0.01);
   transition: 0.7s;
-  z-index: 2;
+  z-index: 11;
   backdrop-filter: blur(7.5px);
 
   .logo {

@@ -159,19 +159,9 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 
 import 'swiper/css/navigation'
 import { onMounted, PropType } from 'vue'
+import { onSetActive } from '@/constant/constant'
 
 const modules = [Navigation]
-
-const onSetActive = (event, isActive: boolean) => {
-  const el = event.target.querySelector('img') || event.target
-  if (el) {
-    if (isActive) {
-      el.src = '/icon/next-icon-active.png'
-    } else {
-      el.src = '/icon/next-icon.svg'
-    }
-  }
-}
 
 onMounted(() => {
   // console.log('props', props.data)
