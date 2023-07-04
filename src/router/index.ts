@@ -11,6 +11,14 @@ const router = createRouter({
         layout: DefaultLayoutVue
       },
       component: () => import('@/pages/HomeView.vue')
+    },
+    {
+      path: '/ve-chung-toi',
+      name: 'aboutUs',
+      meta: {
+        layout: DefaultLayoutVue
+      },
+      component: () => import('@/pages/AboutUsView.vue')
     }
   ],
   scrollBehavior(to, from, savedPosition) {
