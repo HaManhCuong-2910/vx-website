@@ -52,42 +52,42 @@ const listCard = ref([
     ]
   },
   {
-    title: 'Brand eXperience Stragtegy & Identity',
+    title: 'Physical eXperience Packaging Design',
     content:
-      'Trải nghiệm chiến lược và nhận diện thương hiệu toàn diện là mục tiêu mà VX Creative Studio hướng tới.',
+      'Bao bì hay trải nghiệm thương hiệu vật lý là một phần thiết yếu trong việc nhận diện thương hiệu của một sản phẩm. VX cũng coi đó là một phần trong trải nghiệm thương hiệu.',
     listContent: [
-      'Brand Consultancy',
-      'Brand Identity Design',
-      'Rebranding',
-      'Brand Editorial',
-      'Brand Strategy',
-      'Brand Maintaince'
+      'Product Consultant',
+      'Packaging Design',
+      'Product Visual Design',
+      'Packaging Adapt',
+      'Product Identity',
+      'Packaging Maintaince'
     ]
   },
   {
-    title: 'Brand eXperience Stragtegy & Identity',
+    title: 'User eXperience - User Interactive Design',
     content:
-      'Trải nghiệm chiến lược và nhận diện thương hiệu toàn diện là mục tiêu mà VX Creative Studio hướng tới.',
+      'Trải nghiệm người dùng và tương tác là một mảnh ghép không thể thiếu của doanh nghiệp nhằm giúp doanh nghiệp chuyển đổi số trong thời đại công nghệ 4.0. Đây cũng là phân mảng mà VX muốn tập trung và tư vấn cho doanh nghiệp.',
     listContent: [
-      'Brand Consultancy',
-      'Brand Identity Design',
-      'Rebranding',
-      'Brand Editorial',
-      'Brand Strategy',
-      'Brand Maintaince'
+      'UX Research',
+      'UI Design',
+      'Persona Reach',
+      'Multiple Platform',
+      'UI Concept',
+      'Product Developement'
     ]
   },
   {
-    title: 'Brand eXperience Stragtegy & Identity',
+    title: 'Performance Marketing',
     content:
-      'Trải nghiệm chiến lược và nhận diện thương hiệu toàn diện là mục tiêu mà VX Creative Studio hướng tới.',
+      'Tiếp thị truyền thông số là một mảnh ghép cuối cùng để giúp doanh nghiệp xuất hiện cũng như đến với thị trường bằng nội dung số nhằm đưa thương hiệu đến với đông đảo người tiêu dùng hơn trên thị trường số hiện nay.',
     listContent: [
-      'Brand Consultancy',
-      'Brand Identity Design',
-      'Rebranding',
-      'Brand Editorial',
-      'Brand Strategy',
-      'Brand Maintaince'
+      'Brand Lunch',
+      'UI Design',
+      'S-M Communication',
+      'Multiple Platform',
+      'TVC Concept',
+      'Product Developement'
     ]
   }
 ])
@@ -158,10 +158,12 @@ const switchCard = (index) => {
       margin-left: 24px;
       max-width: 357px;
       p {
+        overflow: hidden;
         color: #fff;
         font-size: 16px;
         line-height: 22px;
         margin-top: 26px;
+        animation: fade-show ease-in 0.5s;
       }
     }
     .count,
@@ -176,6 +178,14 @@ const switchCard = (index) => {
     .count {
       margin-left: 24px;
     }
+  }
+}
+@keyframes fade-show {
+  0% {
+    max-height: 0px;
+  }
+  100% {
+    max-height: 300px;
   }
 }
 </style>

@@ -2,8 +2,8 @@
   <div class="intro-home container-custom mx-auto">
     <div class="container-text flex">
       <div class="text-custom">
-        <h1>châm ngôn của VX Creative Studio</h1>
-        <p>Một thương hiệu có cá tính độc đáo là điều mà chúng tôi hướng đến</p>
+        <h1 ref="title" >châm ngôn của VX Creative Studio</h1>
+        <p ref="content">Một thương hiệu có cá tính độc đáo là điều mà chúng tôi hướng đến</p>
       </div>
       <div class="icon-scroll">
         <img src="@/assets/icon/scroll_down.gif" />
@@ -13,8 +13,33 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import HomeInFormationVue from './HomeInformaitionComponent.vue'
+import ScrollReveal from 'scrollreveal'
+import { ref, watch } from 'vue'
+const title = ref(null)
+const content = ref(null)
+watch(
+  () => [title.value,content.value],
+  () => {
+    if (title.value && content.value) {
+      ScrollReveal().reveal(title.value, {
+        duration: 800,
+        distance: '80px',
+        opacity: 0,
+        origin: 'bottom',
+        easing: 'ease'
+      })
+      ScrollReveal().reveal(content.value, {
+        duration: 800,
+        distance: '80px',
+        opacity: 0,
+        origin: 'bottom',
+        easing: 'ease'
+      })
+    }
+  }
+)
 </script>
 
 <style lang="scss" scoped>

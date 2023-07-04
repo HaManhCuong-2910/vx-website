@@ -1,8 +1,8 @@
 <template>
   <div class="container-custom mx-auto">
     <div class="container-text">
-      <h1>sứ mệnh của VX Creative Studio</h1>
-      <p>
+      <h1 ref="title">sứ mệnh của VX Creative Studio</h1>
+      <p ref="content">
         Với vai trò là một đối tác về sáng tạo và tư vấn hỗ trợ cho doanh nghiệp, VX Creative Studio
         chú trọng đến độ hoàn thiện của sản phẩm với chất lượng cao và sự chỉn chu trong mỗi sản
         phẩm thiết kế.
@@ -27,7 +27,36 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup lang="ts">
+import { ref, watch } from 'vue'
+import ScrollReveal from 'scrollreveal'
+
+const title = ref(null)
+const content = ref(null)
+watch(
+  () => [title.value, content.value],
+  () => {
+    if (title.value && content.value) {
+      ScrollReveal().reveal(title.value, {
+        delay: 200,
+        duration: 800,
+        distance: '80px',
+        opacity: 0,
+        origin: 'bottom',
+        easing: 'ease'
+      })
+      ScrollReveal().reveal(content.value, {
+        delay: 200,
+        duration: 800,
+        distance: '80px',
+        opacity: 0,
+        origin: 'bottom',
+        easing: 'ease'
+      })
+    }
+  }
+)
+</script>
 
 <style lang="scss" scoped>
 .container-text {

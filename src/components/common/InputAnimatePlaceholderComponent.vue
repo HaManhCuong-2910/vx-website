@@ -34,13 +34,13 @@
   background: transparent;
   transition: transform 150ms ease-out, font-size 150ms ease-out;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 20px;
   letter-spacing: 0.05em;
 }
 
 .focused .form-label {
   transform: translateY(-125%);
-  font-size: 14px;
+  font-size: 20px;
 }
 
 .form-input {
@@ -53,7 +53,7 @@
   transition: box-shadow 150ms ease-out;
   background: transparent;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 20px;
   letter-spacing: 0.05em;
   color: #a1a1a1;
 }

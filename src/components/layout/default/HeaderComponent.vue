@@ -124,12 +124,15 @@
     li {
       font-weight: 400;
       font-size: 14px;
-      color: #ffffff;
       margin-right: 82px;
       cursor: pointer;
 
       a {
         color: #ffffff;
+
+        &:hover{
+          color: #3939e5;
+        }
       }
 
       &:last-child {

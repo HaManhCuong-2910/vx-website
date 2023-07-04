@@ -4,6 +4,11 @@
 }
 
 @font-face {
+  font-family: SangBleu Sunrise;
+  src: url('@/assets/font/SangBleu-Sunrise.ttf');
+}
+
+@font-face {
   font-family: SVN-Helvetica Now;
   src: url('@/assets/font/SVN-Helvetica Now Text Regular.otf');
 }

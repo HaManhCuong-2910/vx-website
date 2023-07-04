@@ -81,7 +81,7 @@ const listImage = ref([
   }
   .child-hover {
     visibility: hidden;
-    padding: 10px 100px;
+    padding: 60px 80px;
 
     .title-hover {
       font-size: 19px;
@@ -140,6 +140,7 @@ const listImage = ref([
     font-size: 60.018px;
     font-family: SangBleu Sunrise;
     line-height: 64.786px;
+    width: 641px;
   }
 
   .text-ps-bottom-left {
