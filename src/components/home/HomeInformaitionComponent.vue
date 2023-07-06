@@ -180,12 +180,4 @@ const switchCard = (index) => {
     }
   }
 }
-@keyframes fade-show {
-  0% {
-    max-height: 0px;
-  }
-  100% {
-    max-height: 300px;
-  }
-}
 </style>

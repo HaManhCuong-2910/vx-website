@@ -2,11 +2,15 @@
   <div class="banner">
     <IntroAboutComponent />
     <LineAnimateComponentVue />
+    <div class="py-196">
+      <MainIntroAboutComponentVue />
+    </div>
   </div>
 </template>
 
 <script setup>
 import IntroAboutComponent from '@/components/about/IntroAboutComponent.vue'
+import MainIntroAboutComponentVue from '@/components/about/MainIntroAboutComponent.vue'
 import LineAnimateComponentVue from '@/components/util/LineAnimateComponent.vue'
 </script>
 
@@ -30,5 +34,8 @@ import LineAnimateComponentVue from '@/components/util/LineAnimateComponent.vue'
     width: 100%;
     height: 100%;
   }
+}
+.py-196 {
+  padding: 196px 0px;
 }
 </style>
