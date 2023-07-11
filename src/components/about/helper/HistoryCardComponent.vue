@@ -1,26 +1,29 @@
 <template>
   <div class="flex justify-between items-end container-hs-card">
     <div class="flex lg:items-end">
-      <h4>2021</h4>
+      <h4>{{ props.data.year }}</h4>
       <div class="ml-156 pb-60">
-        <p class="title">VX Team Creative</p>
+        <p class="title">{{ props.data.title }}</p>
         <div class="hold-content">
-          <p class="content">
-            Đây là khởi đầu thai nghén một đội ngũ <br />
-            sáng tạo của VX team. Với hành trình đầu tiên tạo <br />
-            nên những giá trị cho doanh nghiệp
-          </p>
+          <p class="content" v-html="props.data.content"></p>
         </div>
       </div>
     </div>
     <div class="line-num">
       <span>Giai đoạn</span>
-      <p>01</p>
+      <p>{{ props.index < 10 ? `0${props.index}` : props.index }}</p>
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { PropType } from 'vue'
+
+const props = defineProps({
+  data: Object as PropType<any>,
+  index: Number
+})
+</script>
 
 <style scoped lang="scss">
 h4 {
@@ -47,7 +50,7 @@ h4 {
   line-height: 56px;
   letter-spacing: -0.32px;
 }
-.hold-content {
+::v-deep .hold-content {
   visibility: hidden;
   overflow-y: hidden;
   transition: 0.5s;
@@ -98,7 +101,7 @@ h4 {
       color: #fff;
       transition: 0.7s;
     }
-    .hold-content {
+    ::v-deep .hold-content {
       transition: 1s;
       visibility: visible;
       overflow-y: visible;

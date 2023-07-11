@@ -11,7 +11,7 @@
         <font-awesome-icon :icon="['fas', 'arrow-right']" class="icon-arrow-right" />
       </p>
     </div>
-    <div>
+    <div class="contain-right-btn">
       <div
         class="right-btn"
         @mouseover="onSetActive($event, true)"
@@ -48,18 +48,22 @@ import { onSetActive } from '@/constant/constant'
     margin-left: 7px;
   }
 }
-.right-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
-  background-color: #3939e5;
-  cursor: pointer;
-  &:hover {
-    transition: 0.4s;
-    background-color: #fff;
+.contain-right-btn {
+  align-self: flex-end;
+  margin-bottom: 70px;
+  .right-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: #3939e5;
+    cursor: pointer;
+    &:hover {
+      transition: 0.4s;
+      background-color: #fff;
+    }
   }
 }
 </style>
