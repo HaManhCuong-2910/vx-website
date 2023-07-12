@@ -19,11 +19,19 @@ const router = createRouter({
         layout: DefaultLayoutVue
       },
       component: () => import('@/pages/AboutUsView.vue')
+    },
+    {
+      path: '/dich-vu',
+      name: 'Service',
+      meta: {
+        layout: DefaultLayoutVue
+      },
+      component: () => import('@/pages/ServiceView.vue')
     }
   ],
   scrollBehavior(to, from, savedPosition) {
     return { top: 0 }
-  },
+  }
 })
 
 export default router

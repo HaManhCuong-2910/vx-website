@@ -20,12 +20,14 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import { dataStaff } from '@/constant/constant'
 import { onMounted, ref } from 'vue'
-import * as dataStaff from '@/service/data/listStaff.json'
-const listCard = ref(dataStaff.default)
+
+const listCard = ref<any[]>([])
 
 onMounted(() => {
+  listCard.value = JSON.parse(JSON.stringify(dataStaff))
   listCard.value.push({
     isJoin: true
   })

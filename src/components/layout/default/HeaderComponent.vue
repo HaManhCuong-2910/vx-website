@@ -46,7 +46,7 @@
             <li>
               <router-link
                 :to="{
-                  name: 'home'
+                  name: 'Service'
                 }"
               >
                 DỊCH VỤ
