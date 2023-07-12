@@ -11,6 +11,7 @@ import ContentDoubleTimeLineComponent from './ContentDoubleTimeLineComponent.vue
 </script>
 
 <style scoped lang="scss">
-// .container-approaches {
-// }
+.container-approaches {
+  height: 514px;
+}
 </style>
