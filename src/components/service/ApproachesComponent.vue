@@ -15,10 +15,35 @@
   <div class="mt-162">
     <ApproachesTimeLineComponent />
   </div>
+  <div class="mt-128">
+    <div class="container-custom mx-auto">
+      <LineAnimateComponent />
+      <div class="mt-63">
+        <div class="title-procedure">
+          <h2 class="font-family-helvetica">
+            Quy trình thiết kế <br />
+            trải nghiệm người dùng
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-162">
+    <ApproachesTimeLineComponent />
+  </div>
+  <div class="mt-309">
+    <ListServiceComponent />
+  </div>
+  <div class="mt-162 pb-100">
+    <ConnectUsComponent />
+  </div>
 </template>
 
 <script setup lang="ts">
 import ApproachesTimeLineComponent from './helper/ApproachesTimeLineComponent.vue'
+import LineAnimateComponent from '../util/LineAnimateComponent.vue'
+import ListServiceComponent from '../common/ListServiceComponent.vue'
+import ConnectUsComponent from '../common/ConnectUsComponent.vue'
 </script>
 
 <style scoped lang="scss">
@@ -37,8 +62,14 @@ import ApproachesTimeLineComponent from './helper/ApproachesTimeLineComponent.vu
 .mt-63 {
   margin-top: 63px;
 }
+.mt-128 {
+  margin-top: 128px;
+}
 .mt-162 {
   margin-top: 162px;
+}
+.mt-309 {
+  margin-top: 309px;
 }
 .title-procedure {
   h2 {

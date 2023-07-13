@@ -39,9 +39,6 @@
 .mt-250 {
   margin-top: 250px;
 }
-.pb-100 {
-  padding-bottom: 100px;
-}
 .bg-service {
   background-image: url('/img/brand_background.png');
   background-repeat: no-repeat;
