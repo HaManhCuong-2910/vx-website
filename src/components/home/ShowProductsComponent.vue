@@ -42,13 +42,29 @@
           <p class="content-hover">HOSPITALITY</p>
         </div>
       </div>
+      <div class="contain-img" v-if="props.isShowMore">
+        <img src="/img/Rectangle_49.png" />
+        <div class="child-hover">
+          <p class="title-hover">Zenture Retreat Resort</p>
+          <p class="content-hover">HOSPITALITY</p>
+        </div>
+      </div>
+      <div class="contain-img" v-if="props.isShowMore">
+        <img src="/img/Rectangle_48.png" />
+        <div class="child-hover">
+          <p class="title-hover">Zenture Retreat Resort</p>
+          <p class="content-hover">HOSPITALITY</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
-
+const props = defineProps({
+  isShowMore: Boolean
+})
 const listImage = ref([
   {
     img: '/img/anh_home_1.png'

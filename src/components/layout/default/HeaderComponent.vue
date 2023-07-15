@@ -55,7 +55,7 @@
             <li>
               <router-link
                 :to="{
-                  name: 'home'
+                  name: 'Project'
                 }"
               >
                 DỰ ÁN
@@ -64,7 +64,7 @@
             <li>
               <router-link
                 :to="{
-                  name: 'home'
+                  name: 'News'
                 }"
               >
                 TIN TỨC

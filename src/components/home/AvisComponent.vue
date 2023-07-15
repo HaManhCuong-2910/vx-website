@@ -5,10 +5,7 @@
         Quan điểm của <br />
         chúng tôi về thị trường
       </h2>
-      <div class="flex container-mal items-center">
-        <span>Xem thêm</span>
-        <font-awesome-icon :icon="['fas', 'arrow-right']" class="icon-arrow" />
-      </div>
+      <WatchMoreComponentVue />
     </div>
   </div>
   <div class="mt-68">
@@ -18,6 +15,7 @@
 
 <script setup>
 import SlideBrandComponent from '@/components/common/SlideBrandComponent.vue'
+import WatchMoreComponentVue from '../common/until/WatchMoreComponent.vue'
 </script>
 
 <style lang="scss" scoped>
@@ -34,18 +32,5 @@ h2 {
   line-height: 85px;
   letter-spacing: -2.44px;
   margin-top: 30px;
-}
-
-.container-mal {
-  margin-top: 20px;
-  cursor: pointer;
-  span {
-    font-size: 17px;
-    line-height: 22px;
-  }
-  .icon-arrow {
-    margin-left: 7px;
-    font-size: 18px;
-  }
 }
 </style>

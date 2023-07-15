@@ -7,6 +7,7 @@
         :modules="modules"
         :spaceBetween="30"
         :initial-slide="1"
+        :loop="true"
         :navigation="(optionNavigation as undefined)"
         :grabCursor="true"
         :centeredSlides="true"
@@ -32,6 +33,11 @@
               <span></span>
               <p>News</p>
             </div>
+          </div>
+        </swiper-slide>
+        <swiper-slide class="custom-slide-item">
+          <div>
+            <img src="/img/brand_slide.png" />
           </div>
         </swiper-slide>
         <swiper-slide class="custom-slide-item">

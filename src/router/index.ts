@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import DefaultLayoutVue from '@/layout/DefaultLayout.vue'
+import { newsRouter } from './news-router'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -27,7 +28,16 @@ const router = createRouter({
         layout: DefaultLayoutVue
       },
       component: () => import('@/pages/ServiceView.vue')
-    }
+    },
+    {
+      path: '/du-an',
+      name: 'Project',
+      meta: {
+        layout: DefaultLayoutVue
+      },
+      component: () => import('@/pages/ProjectView.vue')
+    },
+    ...newsRouter
   ],
   scrollBehavior(to, from, savedPosition) {
     return { top: 0 }

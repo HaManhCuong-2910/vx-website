@@ -18,10 +18,7 @@
           Dưới đây là những dự án sáng tạo đầy tâm huyết của đội ngũ VX Creative Studio đã có cơ hội
           thực hiện
         </p>
-        <div class="flex container-mal items-center">
-          <span>Xem thêm</span>
-          <font-awesome-icon :icon="['fas', 'arrow-right']" class="icon-arrow" />
-        </div>
+        <WatchMoreComponentVue />
       </div>
     </div>
   </div>
@@ -30,6 +27,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 import ScrollReveal from 'scrollreveal'
+import WatchMoreComponentVue from '../common/until/WatchMoreComponent.vue'
 
 const title = ref(null)
 const content = ref(null)
@@ -90,19 +88,6 @@ watch(
   p {
     font-size: 28px;
     line-height: 42px;
-  }
-
-  .container-mal {
-    margin-top: 20px;
-    cursor: pointer;
-    span {
-      font-size: 17px;
-      line-height: 22px;
-    }
-    .icon-arrow {
-      margin-left: 7px;
-      font-size: 18px;
-    }
   }
 }
 .mt-263 {

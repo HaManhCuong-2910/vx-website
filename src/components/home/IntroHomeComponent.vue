@@ -2,8 +2,10 @@
   <div class="intro-home container-custom mx-auto">
     <div class="container-text flex">
       <div class="text-custom">
-        <h1 ref="title" >châm ngôn của VX Creative Studio</h1>
-        <p ref="content">Một thương hiệu có cá tính độc đáo là điều mà chúng tôi hướng đến</p>
+        <h1 ref="title">châm ngôn của VX Creative Studio</h1>
+        <p ref="content" class="font-family-helvetica">
+          Một thương hiệu có cá tính độc đáo là điều mà chúng tôi hướng đến
+        </p>
       </div>
       <div class="icon-scroll">
         <img src="@/assets/icon/scroll_down.gif" />
@@ -20,7 +22,7 @@ import { ref, watch } from 'vue'
 const title = ref(null)
 const content = ref(null)
 watch(
-  () => [title.value,content.value],
+  () => [title.value, content.value],
   () => {
     if (title.value && content.value) {
       ScrollReveal().reveal(title.value, {
