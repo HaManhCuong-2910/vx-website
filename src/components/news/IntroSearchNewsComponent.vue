@@ -1,0 +1,56 @@
+<template>
+  <div>
+    <h1 class="font-family-helvetica">TIN TỨC</h1>
+    <div class="list-item">
+      <ul>
+        <li>ALL</li>
+        <li>CASE STUDY</li>
+        <li>Business</li>
+        <li>trending</li>
+        <li>marketing</li>
+        <li>philosophy</li>
+        <li>graphic design</li>
+      </ul>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts"></script>
+
+<style scoped lang="scss">
+h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 300px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -6px;
+}
+.list-item {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding-top: 31px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    li {
+      padding: 20px 25px;
+      border-radius: 100px;
+      border: 1px solid #fff;
+      color: #fff;
+      font-family: SVN-Helvetica Now;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+  }
+}
+</style>

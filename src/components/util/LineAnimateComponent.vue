@@ -1,8 +1,13 @@
 <template>
-  <span class="block line-animate"></span>
+  <span class="block line-animate" :style="props.color ? `background: ${props.color}` : ''"></span>
 </template>
 
-<script setup></script>
+<script setup lang="ts">
+const props = defineProps({
+  color: String
+})
+console.log('props', props.color)
+</script>
 
 <style lang="scss" scoped>
 .line-animate {

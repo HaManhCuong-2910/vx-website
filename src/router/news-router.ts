@@ -10,11 +10,11 @@ export const newsRouter = [
     component: () => import('@/pages/NewsView.vue')
   },
   {
-    path: '/chi-tiet-tin-tuc',
+    path: '/chi-tiet-tin-tuc/:id',
     name: 'DetailNews',
     meta: {
       layout: DefaultLayoutVue
     },
-    component: () => import('@/pages/NewsView.vue')
+    component: () => import('@/pages/NewsDetail.vue')
   }
 ]

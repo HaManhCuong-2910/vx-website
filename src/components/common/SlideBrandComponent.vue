@@ -30,7 +30,7 @@
             </p>
             <div class="breaking-news">
               <p>10.11.2022 - TRENDING</p>
-              <span></span>
+              <span class="bg-white"></span>
               <p>News</p>
             </div>
           </div>
@@ -130,28 +130,6 @@
           line-height: 50px;
           letter-spacing: -0.96px;
           margin-top: 17px;
-        }
-        .breaking-news {
-          margin-top: 20px;
-          display: flex;
-          align-items: center;
-          p {
-            color: #fff;
-            font-size: 18px;
-            letter-spacing: 1.26px;
-
-            &:last-child {
-              margin-left: 7px;
-            }
-          }
-
-          span {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: #fff;
-            margin-left: 7px;
-          }
         }
       }
     }

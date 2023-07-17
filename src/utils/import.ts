@@ -13,8 +13,9 @@ import store from '@/store'
 import VueCookies from 'vue3-cookies'
 import ScrollReveal from 'scrollreveal'
 
-import '@/assets/css/base.css'
+import '@/assets/css/base.scss'
 import '@/assets/css/font.css'
+import '@/assets/css/tailwind.css'
 import 'swiper/css'
 
 library.add(fas, fab, far)
