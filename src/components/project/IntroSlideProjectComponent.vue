@@ -1,12 +1,12 @@
 <template>
-  <div class="container-custom mx-auto mt-215">
+  <div class="container-custom mx-auto mt-215" :class="props.theme ? props.theme : ''">
     <div class="grid lg:grid-cols-2 gap-x-10">
       <div>
         <h1 class="font-family-helvetica">
           Những bài viết <br />
           nổi bật
         </h1>
-        <WatchMoreComponentVue />
+        <WatchMoreComponentVue :theme="'dark'" />
       </div>
       <div>
         <h2 class="ml-79">
@@ -22,6 +22,9 @@
 
 <script setup lang="ts">
 import WatchMoreComponentVue from '../common/until/WatchMoreComponent.vue'
+const props = defineProps({
+  theme: String
+})
 </script>
 
 <style scoped lang="scss">
@@ -45,5 +48,14 @@ h2 {
 }
 .ml-79 {
   margin-left: 79px;
+}
+
+.dark {
+  h1 {
+    color: #000;
+  }
+  h2 {
+    color: #000;
+  }
 }
 </style>

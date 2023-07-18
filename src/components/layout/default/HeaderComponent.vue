@@ -73,7 +73,7 @@
             <li>
               <router-link
                 :to="{
-                  name: 'home'
+                  name: 'Contact'
                 }"
               >
                 LIÊN HỆ

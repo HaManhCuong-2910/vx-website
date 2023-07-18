@@ -1,11 +1,15 @@
 <template>
-  <div class="flex container-mal items-center">
+  <div class="flex container-mal items-center" :class="props.theme ? props.theme : ''">
     <span>Xem thêm</span>
     <font-awesome-icon :icon="['fas', 'arrow-right']" class="icon-arrow" />
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const props = defineProps({
+  theme: String
+})
+</script>
 
 <style scoped lang="scss">
 .container-mal {
@@ -19,5 +23,9 @@
     margin-left: 7px;
     font-size: 18px;
   }
+}
+
+.dark {
+  color: #000;
 }
 </style>

@@ -17,7 +17,7 @@
       <LineAnimateComponent :color="'rgba(0, 0, 0, 0.10)'" />
     </div>
     <div class="lg:mt-[110px]">
-      <IntroSlideProjectComponent />
+      <IntroSlideProjectComponent :theme="'dark'" />
     </div>
     <div class="lg:mt-[71px] lg:pb-[152px]">
       <SlideBrandComponent />

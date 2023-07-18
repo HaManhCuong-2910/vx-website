@@ -37,6 +37,14 @@ const router = createRouter({
       },
       component: () => import('@/pages/ProjectView.vue')
     },
+    {
+      path: '/lien-he',
+      name: 'Contact',
+      meta: {
+        layout: DefaultLayoutVue
+      },
+      component: () => import('@/pages/ContactView.vue')
+    },
     ...newsRouter
   ],
   scrollBehavior(to, from, savedPosition) {

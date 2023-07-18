@@ -108,7 +108,6 @@ const setFocus = () => {
 }
 
 const handleBlur = () => {
-  console.log('dataValue.value', dataValue.value)
   if (dataValue.value == '') {
     classFocused.value = ''
     classInput.value = ''

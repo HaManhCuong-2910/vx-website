@@ -27,12 +27,60 @@
           <div class="more-container">
             <h3>Khám phá thêm</h3>
             <ul>
-              <li>VỀ CHÚNG TÔI</li>
-              <li>DỊCH VỤ</li>
-              <li>DỰ ÁN</li>
-              <li>TIN TỨC</li>
-              <li>LIÊN HỆ</li>
-              <li>TUYỂN DỤNG</li>
+              <li>
+                <router-link
+                  :to="{
+                    name: 'aboutUs'
+                  }"
+                >
+                  VỀ CHÚNG TÔI
+                </router-link>
+              </li>
+              <li>
+                <router-link
+                  :to="{
+                    name: 'Service'
+                  }"
+                >
+                  DỊCH VỤ
+                </router-link>
+              </li>
+              <li>
+                <router-link
+                  :to="{
+                    name: 'Project'
+                  }"
+                >
+                  DỰ ÁN
+                </router-link>
+              </li>
+              <li>
+                <router-link
+                  :to="{
+                    name: 'News'
+                  }"
+                >
+                  TIN TỨC
+                </router-link>
+              </li>
+              <li>
+                <router-link
+                  :to="{
+                    name: 'Contact'
+                  }"
+                >
+                  LIÊN HỆ
+                </router-link>
+              </li>
+              <li>
+                <router-link
+                  :to="{
+                    name: 'home'
+                  }"
+                >
+                  TUYỂN DỤNG
+                </router-link>
+              </li>
             </ul>
           </div>
         </div>
@@ -40,9 +88,10 @@
           <div class="register-container">
             <h3>Đăng ký nhận thông tin</h3>
             <div class="lg:mt-7 relative">
-              <InputAnimatePlaceholderComponent
+              <InputCommonComponent
                 v-model:value="data.name"
-                :label="'Điền e-mail của bạn'"
+                :style="'font-size: 20px;'"
+                :placeholder="'Điền e-mail của bạn'"
               />
               <div class="submit-btn">
                 <img src="/icon/next-icon.svg" />
@@ -128,6 +177,12 @@ h3 {
       font-weight: 500;
       letter-spacing: 1.12px;
       margin-bottom: 14px;
+
+      a {
+        &:hover {
+          color: #3939e5;
+        }
+      }
     }
   }
 }
@@ -153,7 +208,7 @@ h3 {
 
 <script setup lang="ts">
 import { reactive } from 'vue'
-import InputAnimatePlaceholderComponent from '@/components/common/InputAnimatePlaceholderComponent.vue'
+import InputCommonComponent from '@/components/common/InputCommonComponent.vue'
 const data = reactive({
   name: ''
 })

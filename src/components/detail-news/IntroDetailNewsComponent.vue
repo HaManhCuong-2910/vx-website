@@ -2,8 +2,10 @@
   <div>
     <div class="container lg:mt-[180px]">
       <p class="tag">#INSIGHT</p>
-      <h1>Thay đổi ánh nhìn của chủ doanh nghiệp về xây dựng hình ảnh thương hiệu</h1>
-      <div class="breaking-news">
+      <h1 class="font-family-helvetica">
+        Thay đổi ánh nhìn của chủ doanh nghiệp về xây dựng hình ảnh thương hiệu
+      </h1>
+      <div class="breaking-news lg:mt-[28px]">
         <p>10.11.2022 - TRENDING</p>
         <span class="bg-primary"></span>
         <p>News</p>
@@ -19,5 +21,22 @@
   p {
     color: #000;
   }
+}
+.tag {
+  color: #a6a6a6;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1.26px;
+}
+h1 {
+  color: #000;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 78px; /* 108.333% */
+  letter-spacing: -1.44px;
+  margin-top: 14px;
 }
 </style>
