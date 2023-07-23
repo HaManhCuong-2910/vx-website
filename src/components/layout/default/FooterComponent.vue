@@ -75,7 +75,7 @@
               <li>
                 <router-link
                   :to="{
-                    name: 'home'
+                    name: 'Recruitment'
                   }"
                 >
                   TUYỂN DỤNG

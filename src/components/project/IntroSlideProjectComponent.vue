@@ -6,7 +6,7 @@
           Những bài viết <br />
           nổi bật
         </h1>
-        <WatchMoreComponentVue :theme="'dark'" />
+        <WatchMoreComponentVue :theme="props.theme || ''" />
       </div>
       <div>
         <h2 class="ml-79">

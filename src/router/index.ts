@@ -45,6 +45,14 @@ const router = createRouter({
       },
       component: () => import('@/pages/ContactView.vue')
     },
+    {
+      path: '/tuyen-dung',
+      name: 'Recruitment',
+      meta: {
+        layout: DefaultLayoutVue
+      },
+      component: () => import('@/pages/RecruitmentView.vue')
+    },
     ...newsRouter
   ],
   scrollBehavior(to, from, savedPosition) {

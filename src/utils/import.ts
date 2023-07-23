@@ -12,7 +12,7 @@ import 'element-plus/dist/index.css'
 import store from '@/store'
 import VueCookies from 'vue3-cookies'
 import ScrollReveal from 'scrollreveal'
-
+import { setupInterceptors } from '@/api/setupInterceptors'
 import '@/assets/css/base.scss'
 import '@/assets/css/font.css'
 import '@/assets/css/tailwind.css'
@@ -20,6 +20,7 @@ import 'swiper/css'
 
 library.add(fas, fab, far)
 export function registerGlobalComponent(app: any) {
+  setupInterceptors()
   app
     .use(store)
     .use(router)

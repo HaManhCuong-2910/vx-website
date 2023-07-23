@@ -46,3 +46,26 @@ export const dataStaff = [
     position: 'Creative Designer'
   }
 ]
+
+export const dataDropdownOption = [
+  'Chức vụ mà bạn quan tâm',
+  'Brand eXperience Designer',
+  'UX/UI Designer',
+  'Product Manager',
+  'Account Executive',
+  'Content Marketing',
+  'Content Manager',
+  'Project Manager',
+  'Art Director',
+  'Technology Advisor',
+  'Project Sales Manager'
+]
+
+export enum ETypeForm {
+  CONTACT = 'CONTACT',
+  RECRUITMENT = 'RECRUITMENT'
+}
+
+export const handleResponseApi = (res: any) => {
+  return res.data
+}

@@ -37,7 +37,7 @@ h1 {
   ul {
     display: flex;
     flex-wrap: wrap;
-    column-gap: 30px;
+    gap: 30px;
     li {
       padding: 20px 25px;
       border-radius: 100px;

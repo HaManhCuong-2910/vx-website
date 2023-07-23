@@ -2,13 +2,15 @@
   <textarea
     rows="3"
     class="input-common"
-    :class="classInput"
+    :class="[classInput, props.error && 'errors-input']"
     v-model="dataValue"
     :placeholder="props.placeholder"
     type="text"
     @input="handleUpdateField()"
+    @blur="handleBlurField()"
   >
   </textarea>
+  <p class="errors-custom" v-if="props.error">{{ props.error }}</p>
 </template>
 
 <script setup lang="ts">
@@ -16,13 +18,14 @@ import { onMounted, ref } from 'vue'
 
 const props = defineProps({
   value: String,
-  placeholder: String
+  placeholder: String,
+  error: String
 })
 
 const classInput = ref('')
 const dataValue = ref('')
 
-const emit = defineEmits(['update:value'])
+const emit = defineEmits(['update:value', 'blurField'])
 
 onMounted(() => {
   dataValue.value = props.value
@@ -30,6 +33,10 @@ onMounted(() => {
 
 const handleUpdateField = () => {
   emit('update:value', dataValue.value)
+}
+
+const handleBlurField = () => {
+  emit('blurField', dataValue.value)
 }
 </script>
 
@@ -49,8 +56,17 @@ const handleUpdateField = () => {
   letter-spacing: 0.05em;
   color: rgba(255, 255, 255, 0.6);
 
+  &.errors-input {
+    box-shadow: 0 1px 0 0 #e84118;
+  }
+
   &::placeholder {
     color: rgba(255, 255, 255, 0.6);
   }
+}
+
+.errors-custom {
+  font-size: 24px;
+  color: #e84118;
 }
 </style>

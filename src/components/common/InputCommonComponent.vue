@@ -1,13 +1,22 @@
 <template>
-  <input
-    class="input-common"
-    :class="classInput"
-    v-model="dataValue"
-    :placeholder="props.placeholder"
-    type="text"
-    :style="props.style"
-    @input="handleUpdateField()"
-  />
+  <div class="relative">
+    <input
+      class="input-common"
+      :class="[classInput, props.error && 'errors-input']"
+      v-model="dataValue"
+      :placeholder="props.placeholder"
+      type="text"
+      :style="props.style"
+      :readonly="props.readonly"
+      :disabled="props.disabled"
+      @input="handleUpdateField()"
+      @blur="handleBlurField()"
+    />
+    <div class="prefix-input">
+      <slot name="prefix" />
+    </div>
+  </div>
+  <p class="errors-custom" v-if="props.error">{{ props.error }}</p>
 </template>
 
 <script setup lang="ts">
@@ -16,13 +25,16 @@ import { onMounted, ref } from 'vue'
 const props = defineProps({
   value: String,
   placeholder: String,
-  style: String
+  style: String,
+  disabled: Boolean,
+  readonly: Boolean,
+  error: String
 })
 
 const classInput = ref('')
 const dataValue = ref('')
 
-const emit = defineEmits(['update:value'])
+const emit = defineEmits(['update:value', 'blurField'])
 
 onMounted(() => {
   dataValue.value = props.value
@@ -30,6 +42,9 @@ onMounted(() => {
 
 const handleUpdateField = () => {
   emit('update:value', dataValue.value)
+}
+const handleBlurField = () => {
+  emit('blurField', dataValue.value)
 }
 </script>
 
@@ -48,8 +63,24 @@ const handleUpdateField = () => {
   letter-spacing: 0.05em;
   color: rgba(255, 255, 255, 0.6);
 
+  &.errors-input {
+    box-shadow: 0 1px 0 0 #e84118;
+  }
+
   &::placeholder {
     color: rgba(255, 255, 255, 0.6);
   }
+}
+
+.errors-custom {
+  font-size: 24px;
+  color: #e84118;
+}
+
+.prefix-input {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 </style>
