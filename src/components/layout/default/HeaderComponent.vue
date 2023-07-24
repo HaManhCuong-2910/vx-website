@@ -1,6 +1,6 @@
 <template>
   <Transition name="nave-fade">
-    <nav class="navigation" :class="[isFixFullScreen && 'fix-full-screen']">
+    <nav class="navigation">
       <div class="container-custom mx-auto d-flex justify-content-space-between align-items-center">
         <router-link
           :to="{
@@ -80,16 +80,15 @@
               </router-link>
             </li>
           </ul>
-          <div class="icon-menu">
+          <div class="icon-menu cursor-pointer" @click="isShowNav = true">
             <img src="@/assets/icon/header_menu.svg" />
           </div>
         </div>
-        <!-- <MenuBarMobileComponent
-          v-if="isMobile()"
-          @updateFixMobie="handleChangeFixFullScreen($event)"
-        /> -->
       </div>
     </nav>
+  </Transition>
+  <Transition name="nave-fade">
+    <MegaMenuComponentVue v-if="isShowNav" @closeMegaMenu="isShowNav = false" />
   </Transition>
 </template>
 
@@ -233,18 +232,9 @@
 import { isMobile } from '@/constant/helper'
 import { onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-// import MenuBarMobileComponent from './helper/MenuBarMobileComponent.vue'
-const isShowNav = ref<boolean>(true)
-onMounted(() => {
-  // window.addEventListener('scroll', (e: any) => {
-  //   const currentScroll = document.documentElement.scrollTop
-  //   if (currentScroll > 200) {
-  //     isShowNav.value = false
-  //   } else {
-  //     isShowNav.value = true
-  //   }
-  // })
-})
+import MegaMenuComponentVue from './helper/MegaMenuComponent.vue'
+const isShowNav = ref<boolean>(false)
+onMounted(() => {})
 const router = useRouter()
 
 const route = useRoute()
@@ -261,15 +251,12 @@ const handleBackHome = () => {
     name: 'home'
   })
 }
-const isFixFullScreen = ref(false)
-const handleChangeFixFullScreen = (event) => {
-  isFixFullScreen.value = event
-}
 
 watch(
   () => route.path,
   (value) => {
     isHome.value = value === '/'
+    isShowNav.value = false
   }
 )
 

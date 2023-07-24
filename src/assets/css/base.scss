@@ -38,6 +38,10 @@ body {
   color: #fff;
 }
 
+body:has(.mega-menu){
+  overflow-y: hidden;
+}
+
 .d-flex {
   display: flex;
 }

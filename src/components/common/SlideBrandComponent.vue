@@ -13,8 +13,21 @@
         :centeredSlides="true"
       >
         <swiper-slide class="custom-slide-item">
-          <div class="item-container">
+          <div>
             <img src="/img/brand_slide.png" />
+          </div>
+
+          <div class="item-container-text">
+            <p class="title">TRENDING</p>
+            <p class="content font-family-helvetica">
+              Trí tuệ nhân tạo và con người có thể <br />
+              song hành cùng nhau được hay không ?
+            </p>
+            <div class="breaking-news">
+              <p>10.11.2022 - TRENDING</p>
+              <span class="bg-white"></span>
+              <p>News</p>
+            </div>
           </div>
         </swiper-slide>
         <swiper-slide class="custom-slide-item">
@@ -39,10 +52,36 @@
           <div>
             <img src="/img/brand_slide.png" />
           </div>
+
+          <div class="item-container-text">
+            <p class="title">TRENDING</p>
+            <p class="content font-family-helvetica">
+              Trí tuệ nhân tạo và con người có thể <br />
+              song hành cùng nhau được hay không ?
+            </p>
+            <div class="breaking-news">
+              <p>10.11.2022 - TRENDING</p>
+              <span class="bg-white"></span>
+              <p>News</p>
+            </div>
+          </div>
         </swiper-slide>
         <swiper-slide class="custom-slide-item">
           <div>
             <img src="/img/brand_slide.png" />
+          </div>
+
+          <div class="item-container-text">
+            <p class="title">TRENDING</p>
+            <p class="content font-family-helvetica">
+              Trí tuệ nhân tạo và con người có thể <br />
+              song hành cùng nhau được hay không ?
+            </p>
+            <div class="breaking-news">
+              <p>10.11.2022 - TRENDING</p>
+              <span class="bg-white"></span>
+              <p>News</p>
+            </div>
           </div>
         </swiper-slide>
       </swiper>

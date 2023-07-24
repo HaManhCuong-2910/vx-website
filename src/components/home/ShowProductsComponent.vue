@@ -94,11 +94,19 @@ const listImage = ref([
   img {
     width: 100%;
     height: 100%;
+    transform: scale(1);
+    transition: 0.5s;
   }
   .child-hover {
     visibility: hidden;
     padding: 60px 80px;
-
+    transition: 0.5s;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: transparent;
     .title-hover {
       font-size: 19px;
       font-weight: 500;
@@ -106,6 +114,8 @@ const listImage = ref([
       letter-spacing: 0.95px;
       text-transform: uppercase;
       transform: translateY(-30px);
+      opacity: 0;
+      transition: 0.5s;
     }
 
     .content-hover {
@@ -114,6 +124,7 @@ const listImage = ref([
       letter-spacing: 0.9px;
       text-transform: uppercase;
       opacity: 0;
+      transition: 0.5s;
     }
   }
   &:hover {
@@ -133,6 +144,7 @@ const listImage = ref([
 
       .title-hover {
         transition: 0.5s;
+        opacity: 1;
         transform: translateY(0px);
       }
 

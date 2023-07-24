@@ -11,7 +11,7 @@
         <font-awesome-icon :icon="['fas', 'arrow-right']" class="icon-arrow-right" />
       </p>
     </div>
-    <div class="contain-right-btn">
+    <div class="contain-right-btn" v-if="!props.isHideNextButton">
       <div
         class="right-btn"
         @mouseover="onSetActive($event, true)"
@@ -25,6 +25,9 @@
 
 <script setup lang="ts">
 import { onSetActive } from '@/constant/constant'
+const props = defineProps({
+  isHideNextButton: Boolean
+})
 </script>
 
 <style scoped lang="scss">
