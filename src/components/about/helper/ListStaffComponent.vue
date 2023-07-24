@@ -9,7 +9,10 @@
         <p>{{ item.position }}</p>
       </div>
       <div v-else>
-        <div class="img-card flex justify-center align-center">
+        <div
+          class="img-card flex justify-center align-center cursor-pointer"
+          @click="redirectToRecruitment()"
+        >
           <div class="flex items-center join-txt">
             <p>JOIN US</p>
             <img src="@/assets/icon/arrow_cheo.svg" />
@@ -23,8 +26,10 @@
 <script setup lang="ts">
 import { dataStaff } from '@/constant/constant'
 import { onMounted, ref } from 'vue'
+import { useRouter } from 'vue-router'
 
 const listCard = ref<any[]>([])
+const router = useRouter()
 
 onMounted(() => {
   listCard.value = JSON.parse(JSON.stringify(dataStaff))
@@ -32,6 +37,12 @@ onMounted(() => {
     isJoin: true
   })
 })
+
+const redirectToRecruitment = () => {
+  router.push({
+    name: 'Recruitment'
+  })
+}
 </script>
 
 <style scoped lang="scss">
