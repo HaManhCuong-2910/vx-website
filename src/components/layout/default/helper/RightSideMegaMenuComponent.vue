@@ -1,14 +1,16 @@
 <template>
-  <div class="lg:pl-[34px]">
+  <div class="lg:pl-[34px]" style="max-height: 336px">
     <div class="lg:pt-[50px]">
-      <ConnectUsComponent :is-hide-next-button="true" />
+      <ConnectUsComponent :is-hide-next-button="true" :isFull="true" />
     </div>
-    <div class="lg:mt-[63px]">
-      <LineAnimateComponent />
-    </div>
-    <div>
-      <img src="@/assets/icon/hiring.gif" class="w-full lg:h-[337px] object-cover" />
-    </div>
+  </div>
+  <div class="lg:mt-[58px]">
+    <LineAnimateComponent />
+  </div>
+  <div class="lg:mr-[-90px]">
+    <img src="@/assets/icon/hiring.gif" class="w-full lg:h-[337px] object-cover" />
+  </div>
+  <div>
     <LineAnimateComponent />
     <div class="container-social">
       <FeatureSocialComponentVue />
@@ -24,6 +26,6 @@ import FeatureSocialComponentVue from './FeatureSocialComponent.vue'
 
 <style scoped lang="scss">
 .container-social {
-  height: 56px;
+  height: 118px;
 }
 </style>

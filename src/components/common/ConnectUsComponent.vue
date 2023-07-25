@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-between container-custom mx-auto">
+  <div class="flex justify-between" :class="!isFull && 'container-custom mx-auto'">
     <div>
       <p class="title font-family-helvetica">
         Kết nối với chúng tôi để cùng <br />
@@ -26,7 +26,8 @@
 <script setup lang="ts">
 import { onSetActive } from '@/constant/constant'
 const props = defineProps({
-  isHideNextButton: Boolean
+  isHideNextButton: Boolean,
+  isFull: Boolean
 })
 </script>
 

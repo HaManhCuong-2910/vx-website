@@ -1,13 +1,13 @@
 <template>
   <div>
-    <ul class="lg:pb-[32px]">
+    <ul class="lg:pb-[32px]" style="max-height: 362px">
       <li>
         <router-link
           :to="{
             name: 'Service'
           }"
         >
-          DỊCH VỤ
+          Dịch vụ
         </router-link>
       </li>
       <li>
@@ -16,7 +16,7 @@
             name: 'aboutUs'
           }"
         >
-          VỀ CHÚNG TÔI
+          Về chúng tôi
         </router-link>
       </li>
 
@@ -26,7 +26,7 @@
             name: 'Project'
           }"
         >
-          DỰ ÁN
+          Dự án
         </router-link>
       </li>
       <li>
@@ -35,7 +35,7 @@
             name: 'News'
           }"
         >
-          TIN TỨC
+          Tin tức
         </router-link>
       </li>
       <li>
@@ -44,13 +44,13 @@
             name: 'Contact'
           }"
         >
-          LIÊN HỆ
+          Liên hệ
         </router-link>
       </li>
     </ul>
     <LineAnimateComponent />
-    <div class="lg:mt-[35px]">
-      <LeftSideFormContactComponent :isUnsetBorderRight="true" />
+    <div>
+      <LeftSideFormContactComponent :isUnsetBorderRight="true" :class="'custom-mega-menu'" />
     </div>
   </div>
 </template>
@@ -63,13 +63,14 @@ import LeftSideFormContactComponent from '@/components/contact/LeftSideFormConta
 <style scoped lang="scss">
 ul {
   li {
-    color: #fff;
-    font-size: 40px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-
     a {
+      font-family: SVN-TT Hoves;
+      color: #fff;
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      letter-spacing: 0px;
       &:hover {
         color: #3939e5;
       }

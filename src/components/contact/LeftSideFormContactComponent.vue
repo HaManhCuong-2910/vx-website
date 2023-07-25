@@ -1,5 +1,8 @@
 <template>
-  <div class="left-from-contact" :class="props.isUnsetBorderRight && 'unset-border-right'">
+  <div
+    class="left-from-contact"
+    :class="[props.isUnsetBorderRight && 'unset-border-right', props.class]"
+  >
     <h2>Trụ sở văn phòng</h2>
     <div class="group-contact lg:mt-[107px]">
       <h3>Địa chỉ:</h3>
@@ -20,7 +23,8 @@
 
 <script setup lang="ts">
 const props = defineProps({
-  isUnsetBorderRight: Boolean
+  isUnsetBorderRight: Boolean,
+  class: String
 })
 </script>
 
@@ -28,6 +32,21 @@ const props = defineProps({
 .left-from-contact {
   padding: 35px 59px 50px 0px;
   border-right: 1px solid rgba(255, 255, 255, 0.2);
+
+  &.custom-mega-menu {
+    h2 {
+      font-size: 34px;
+      padding-bottom: 15px;
+    }
+
+    .group-contact {
+      margin-top: 20px;
+
+      p {
+        font-size: 20px;
+      }
+    }
+  }
 
   &.unset-border-right {
     border-right: unset;
