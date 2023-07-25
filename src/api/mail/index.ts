@@ -3,7 +3,9 @@ import { instance } from '../axios'
 
 export const sendRecruitmentApi = async (body: any) => {
   try {
-    const res = await instance.post('/mail/send-mail-apply', body)
+    const res = await instance.post('/mail/send-mail-apply', body, {
+      headers: { 'Content-Type': 'multipart/form-data' }
+    })
     return [handleResponseApi(res), null]
   } catch (err: any) {
     return [null, err]

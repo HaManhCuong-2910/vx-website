@@ -79,9 +79,10 @@ import FileRecruitmentComponentVue from './FileRecruitmentComponent.vue'
 import * as yup from 'yup'
 import { ElLoading, ElMessage } from 'element-plus'
 import { sendRecruitmentApi } from '@/api/mail'
+import { useRouter } from 'vue-router'
 const listData = ref<any[]>(dataDropdownOption)
 const dropdownListOption = ref<any[]>([])
-
+const router = useRouter()
 const data = reactive({
   fullName: '',
   email: '',
@@ -149,6 +150,11 @@ const handleSubmit = async () => {
   dataSchema
     .validate(data, { abortEarly: false })
     .then(async () => {
+      const loading = ElLoading.service({
+        lock: true,
+        text: 'Loading',
+        background: 'rgba(0, 0, 0, 0.7)'
+      })
       const formData = new FormData()
       formData.append('fullName', data.fullName)
       formData.append('email', data.email)
@@ -165,13 +171,15 @@ const handleSubmit = async () => {
         })
         return
       }
-      console.log('res', res)
-      // const loading = ElLoading.service({
-      //         lock: true,
-      //         text: 'Loading',
-      //         background: 'rgba(0, 0, 0, 0.7)',
-      //       });
-      //       loading.close();
+      ElMessage({
+        message: 'Gửi lời nhắn thành công',
+        type: 'success'
+      })
+
+      loading.close()
+      router.push({
+        name: 'home'
+      })
     })
     .catch((err) => {
       err.inner.forEach((error: { path: any; message: string }) => {
