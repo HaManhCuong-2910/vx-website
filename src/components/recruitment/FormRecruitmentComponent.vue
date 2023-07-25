@@ -77,7 +77,8 @@ import { onMounted, reactive, ref, watch } from 'vue'
 import { dataDropdownOption } from '@/constant/constant'
 import FileRecruitmentComponentVue from './FileRecruitmentComponent.vue'
 import * as yup from 'yup'
-import { ElLoading } from 'element-plus'
+import { ElLoading, ElMessage } from 'element-plus'
+import { sendRecruitmentApi } from '@/api/mail'
 const listData = ref<any[]>(dataDropdownOption)
 const dropdownListOption = ref<any[]>([])
 
@@ -97,7 +98,6 @@ const dataSchema = yup.object().shape({
   email: yup.string().required('Email không được bỏ trống').email('Email không hợp lệ'),
   phoneNumber: yup.string().required('Số điện thoại không được bỏ trống'),
   position: yup.string().test('testPosition', 'Vui lòng chọn chức vụ', (value) => {
-    console.log('value', value !== 'Chức vụ mà bạn quan tâm')
     return value !== 'Chức vụ mà bạn quan tâm'
   }),
   storySel: yup.string().required('Giới thiệu bản thân không được bỏ trống'),
@@ -149,7 +149,23 @@ const handleSubmit = async () => {
   dataSchema
     .validate(data, { abortEarly: false })
     .then(async () => {
-      console.log('pass')
+      const formData = new FormData()
+      formData.append('fullName', data.fullName)
+      formData.append('email', data.email)
+      formData.append('phoneNumber', data.phoneNumber)
+      formData.append('position', data.position)
+      formData.append('introduction', data.storySel)
+      formData.append('fileCV', data.attachmentFile)
+
+      const [res, err] = await sendRecruitmentApi(formData)
+      if (err) {
+        ElMessage({
+          message: 'Gửi lời nhắn không thành công',
+          type: 'error'
+        })
+        return
+      }
+      console.log('res', res)
       // const loading = ElLoading.service({
       //         lock: true,
       //         text: 'Loading',
