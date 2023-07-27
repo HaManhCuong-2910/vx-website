@@ -84,6 +84,9 @@
             <img src="@/assets/icon/header_menu.svg" />
           </div>
         </div>
+        <div class="icon-menu cursor-pointer" @click="isShowNav = true" v-if="isMobile()">
+          <img src="@/assets/icon/header_menu.svg" />
+        </div>
       </div>
     </nav>
   </Transition>
@@ -224,6 +227,11 @@
   }
   .container-list-nav {
     display: none;
+  }
+
+  svg {
+    width: 110px;
+    height: 53.518px;
   }
 }
 </style>

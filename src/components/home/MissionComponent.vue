@@ -9,7 +9,7 @@
       </p>
     </div>
 
-    <div class="flex justify-between mt-263">
+    <div class="flex justify-between mt-263 contain-text">
       <p class="title-large font-family-helvetica">
         Khám phá những dự án trải nghiệm của chúng tôi
       </p>
@@ -92,5 +92,50 @@ watch(
 }
 .mt-263 {
   margin-top: 263px;
+}
+
+@media screen and (max-width: 992px) {
+  .container-text {
+    h1 {
+      font-size: 10px;
+    }
+
+    p {
+      margin-top: 21px;
+      font-size: 22px;
+      line-height: 27px; /* 122.727% */
+      letter-spacing: -0.44px;
+    }
+  }
+
+  .mt-263 {
+    margin-top: 129px;
+  }
+
+  .contain-text {
+    flex-direction: column;
+  }
+
+  .title-large {
+    max-width: 290px;
+    font-size: 22px;
+    line-height: 27px;
+    letter-spacing: -0.44px;
+  }
+
+  .text-next {
+    max-width: 100%;
+    margin-right: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 19px;
+    p {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 21px;
+      margin-right: 17px;
+    }
+  }
 }
 </style>

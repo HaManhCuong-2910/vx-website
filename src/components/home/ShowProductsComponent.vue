@@ -11,8 +11,8 @@
       </div>
       <div class="contain-img">
         <img src="/img/anh_home_2.png" />
-        <p class="text-ps text-ps-bottom-left">
-          A delivery service <br />
+        <p class="text-ps text-ps-bottom-left" :class="isMobile() && 'set-center'">
+          A delivery service <br v-if="!isMobile()" />
           you cand depend on
         </p>
         <div class="child-hover">
@@ -22,7 +22,7 @@
       </div>
       <div class="contain-img">
         <img src="/img/anh_home_3.png" />
-        <p class="text-ps text-ps-bottom-right">
+        <p class="text-ps text-ps-bottom-right" :class="isMobile() && 'set-center'">
           SPACE FOR <br />
           ART & FUTURE
         </p>
@@ -61,7 +61,9 @@
 </template>
 
 <script setup lang="ts">
+import { isMobile } from '@/constant/helper'
 import { ref } from 'vue'
+
 const props = defineProps({
   isShowMore: Boolean
 })
@@ -160,6 +162,12 @@ const listImage = ref([
     letter-spacing: 0.01px;
   }
 
+  .set-center {
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%);
+  }
+
   .text-ps-center {
     top: 50%;
     left: 50%;
@@ -198,6 +206,66 @@ const listImage = ref([
 
     .text-travel {
       color: #27ccac;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .contain-img {
+    width: 100%;
+    height: 467px;
+    img {
+      object-fit: cover;
+    }
+
+    .text-ps-center {
+      font-size: 36px;
+      font-weight: 400;
+      line-height: 43.2px;
+      width: 347px;
+    }
+
+    .text-ps-bottom-left {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 28.8px;
+
+      width: 269px;
+      height: 58px;
+    }
+
+    .text-ps-bottom-right {
+      font-size: 32px;
+      line-height: normal;
+      width: 227px;
+      height: 82px;
+
+      text-align: center;
+    }
+
+    .text-ps-top-right {
+      top: 15px;
+      right: 18px;
+      font-size: 35.772px;
+      line-height: 36.283px;
+    }
+    .child-hover {
+      padding: 40px 35px;
+
+      .title-hover {
+        font-size: 16px;
+        line-height: normal;
+        letter-spacing: 0.8px;
+      }
+
+      .content-hover {
+        font-size: 10px;
+        margin-top: 7px;
+        line-height: normal;
+        letter-spacing: 0.7px;
+      }
+    }
+    &:hover {
     }
   }
 }

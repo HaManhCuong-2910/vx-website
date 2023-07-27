@@ -12,73 +12,18 @@
         :grabCursor="true"
         :centeredSlides="true"
       >
-        <swiper-slide class="custom-slide-item">
+        <swiper-slide class="custom-slide-item" v-for="(item, index) in slideBrand" :key="index">
           <div>
-            <img src="/img/brand_slide.png" />
+            <img :src="item.img" />
           </div>
 
           <div class="item-container-text">
-            <p class="title">TRENDING</p>
+            <p class="title">{{ item.tag }}</p>
             <p class="content font-family-helvetica">
-              Trí tuệ nhân tạo và con người có thể <br />
-              song hành cùng nhau được hay không ?
+              {{ item.content }}
             </p>
             <div class="breaking-news">
-              <p>10.11.2022 - TRENDING</p>
-              <span class="bg-white"></span>
-              <p>News</p>
-            </div>
-          </div>
-        </swiper-slide>
-        <swiper-slide class="custom-slide-item">
-          <div>
-            <img src="/img/brand_slide.png" />
-          </div>
-
-          <div class="item-container-text">
-            <p class="title">TRENDING</p>
-            <p class="content font-family-helvetica">
-              Trí tuệ nhân tạo và con người có thể <br />
-              song hành cùng nhau được hay không ?
-            </p>
-            <div class="breaking-news">
-              <p>10.11.2022 - TRENDING</p>
-              <span class="bg-white"></span>
-              <p>News</p>
-            </div>
-          </div>
-        </swiper-slide>
-        <swiper-slide class="custom-slide-item">
-          <div>
-            <img src="/img/brand_slide.png" />
-          </div>
-
-          <div class="item-container-text">
-            <p class="title">TRENDING</p>
-            <p class="content font-family-helvetica">
-              Trí tuệ nhân tạo và con người có thể <br />
-              song hành cùng nhau được hay không ?
-            </p>
-            <div class="breaking-news">
-              <p>10.11.2022 - TRENDING</p>
-              <span class="bg-white"></span>
-              <p>News</p>
-            </div>
-          </div>
-        </swiper-slide>
-        <swiper-slide class="custom-slide-item">
-          <div>
-            <img src="/img/brand_slide.png" />
-          </div>
-
-          <div class="item-container-text">
-            <p class="title">TRENDING</p>
-            <p class="content font-family-helvetica">
-              Trí tuệ nhân tạo và con người có thể <br />
-              song hành cùng nhau được hay không ?
-            </p>
-            <div class="breaking-news">
-              <p>10.11.2022 - TRENDING</p>
+              <p>{{ item.createDate }} - {{ item.tag }}</p>
               <span class="bg-white"></span>
               <p>News</p>
             </div>
@@ -163,6 +108,7 @@
           letter-spacing: 1.26px;
         }
         .content {
+          max-width: 880px;
           color: #fff;
           font-size: 48px;
           font-weight: 500;
@@ -179,10 +125,9 @@
 <script lang="ts" setup>
 import { Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/vue'
-
 import 'swiper/css/navigation'
 import { onMounted, PropType } from 'vue'
-import { onSetActive } from '@/constant/constant'
+import { onSetActive, slideBrand } from '@/constant/constant'
 
 const modules = [Navigation]
 

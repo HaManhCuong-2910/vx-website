@@ -33,4 +33,24 @@ import ProfessionalCompetenceComponent from '../common/ProfessionalCompetenceCom
     letter-spacing: -1.44px;
   }
 }
+
+@media screen and (max-width: 992px) {
+  .mt-159 {
+    margin-top: 65px;
+  }
+  .w-60 {
+    width: 100%;
+  }
+
+  .title {
+    padding-top: 0px;
+    padding-bottom: 25px;
+    h2 {
+      font-size: 25px;
+      line-height: 32px; /* 128% */
+      letter-spacing: -0.75px;
+      max-width: 290px;
+    }
+  }
+}
 </style>

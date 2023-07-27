@@ -27,4 +27,19 @@ h3 {
   letter-spacing: 1px;
   text-transform: uppercase;
 }
+
+@media screen and (max-width: 992px) {
+  .mt-153 {
+    margin-top: 80px;
+  }
+
+  .mt-102 {
+    margin-top: 33px;
+  }
+
+  h3 {
+    font-size: 13px;
+    text-align: center;
+  }
+}
 </style>

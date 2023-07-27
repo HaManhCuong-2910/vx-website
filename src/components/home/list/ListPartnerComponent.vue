@@ -141,4 +141,10 @@ onMounted(() => {
     }
   }
 }
+
+@media screen and (max-width: 992px) {
+  .item {
+    padding: 19px 22px;
+  }
+}
 </style>

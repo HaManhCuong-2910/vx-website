@@ -67,4 +67,5 @@ import MissionComponentVue from '@/components/home/MissionComponent.vue'
 import PartnerComponentVue from '@/components/home/PartnerComponent.vue'
 import ShowProductsComponentVue from '@/components/home/ShowProductsComponent.vue'
 import ConnectUsComponent from '@/components/common/ConnectUsComponent.vue'
+import { isMobile } from '@/constant/helper'
 </script>

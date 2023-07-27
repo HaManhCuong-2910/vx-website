@@ -7,7 +7,7 @@
           Một thương hiệu có cá tính độc đáo là điều mà chúng tôi hướng đến
         </p>
       </div>
-      <div class="icon-scroll">
+      <div class="icon-scroll" v-if="!isMobile()">
         <img src="@/assets/icon/scroll_down.gif" />
       </div>
     </div>
@@ -16,6 +16,7 @@
 </template>
 
 <script setup lang="ts">
+import { isMobile } from '@/constant/helper'
 import HomeInFormationVue from './HomeInformaitionComponent.vue'
 import ScrollReveal from 'scrollreveal'
 import { ref, watch } from 'vue'
@@ -81,6 +82,28 @@ watch(
       img {
         width: 150px;
         height: 150px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .intro-home {
+    padding-top: 260px;
+
+    .container-text {
+      padding-bottom: 50px;
+      .text-custom {
+        h1 {
+          font-size: 11px;
+          margin-bottom: 20px;
+        }
+
+        p {
+          font-size: 31px;
+          line-height: 38px;
+          letter-spacing: -0.62px;
+        }
       }
     }
   }

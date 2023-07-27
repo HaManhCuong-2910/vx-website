@@ -47,6 +47,33 @@ export const dataStaff = [
   }
 ]
 
+export const slideBrand = [
+  {
+    img: '/img/brand_slide.png',
+    content: 'Trí tuệ nhân tạo và con người có thể song hành cùng nhau được hay không ?',
+    createDate: '10.11.2022',
+    tag: 'TRENDING'
+  },
+  {
+    img: '/img/brand_slide.png',
+    content: 'Trí tuệ nhân tạo và con người có thể song hành cùng nhau được hay không ?',
+    createDate: '10.11.2022',
+    tag: 'TRENDING'
+  },
+  {
+    img: '/img/brand_slide.png',
+    content: 'Trí tuệ nhân tạo và con người có thể song hành cùng nhau được hay không ?',
+    createDate: '10.11.2022',
+    tag: 'TRENDING'
+  },
+  {
+    img: '/img/brand_slide.png',
+    content: 'Trí tuệ nhân tạo và con người có thể song hành cùng nhau được hay không ?',
+    createDate: '10.11.2022',
+    tag: 'TRENDING'
+  }
+]
+
 export const dataDropdownOption = [
   'Chức vụ mà bạn quan tâm',
   'Brand eXperience Designer',

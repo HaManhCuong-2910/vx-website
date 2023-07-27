@@ -28,4 +28,20 @@ const props = defineProps({
 .dark {
   color: #000;
 }
+
+@media screen and (max-width: 992px) {
+  .container-mal {
+    span {
+      width: 69px;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 21px;
+    }
+
+    .icon-arrow {
+      width: 16px;
+      height: 12px;
+    }
+  }
+}
 </style>

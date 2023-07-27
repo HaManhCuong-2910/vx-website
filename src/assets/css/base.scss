@@ -38,7 +38,7 @@ body {
   color: #fff;
 }
 
-body:has(.mega-menu){
+body:has(.mega-menu) {
   overflow-y: hidden;
 }
 
@@ -229,5 +229,15 @@ path {
     height: 12px;
     border-radius: 50%;
     margin-left: 7px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .breaking-news {
+    margin-top: 15px;
+    p {
+      font-size: 15px;
+      line-height: 21px;
+    }
   }
 }
