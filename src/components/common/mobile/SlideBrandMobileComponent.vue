@@ -1,6 +1,6 @@
 <template>
   <div class="container-custom mx-auto">
-    <div class="slide-items" v-for="item in slideBrand" :key="item">
+    <div class="slide-items" v-for="item in slideBrand" :key="item.tag">
       <p class="tag">{{ item.tag }}</p>
       <h2 class="font-family-helvetica">
         {{ item.content }}
