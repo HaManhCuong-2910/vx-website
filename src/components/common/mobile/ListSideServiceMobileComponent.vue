@@ -31,10 +31,6 @@ import { onMounted, PropType } from 'vue'
 const props = defineProps({
   data: Array as PropType<any[]>
 })
-
-onMounted(() => {
-  console.log('props', props.data)
-})
 </script>
 
 <style scoped lang="scss">

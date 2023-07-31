@@ -50,6 +50,7 @@ import ApproachesComponentVue from '@/components/service/ApproachesComponent.vue
   }
 
   .mt-91 {
+    margin-top: 52px;
   }
 }
 </style>

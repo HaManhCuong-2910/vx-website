@@ -5,7 +5,7 @@
       <div class="container-custom mx-auto flex">
         <div
           class="item-circle relative"
-          v-for="(item, index) in dataTimeLine"
+          v-for="(item, index) in props.dataTimeLine"
           :class="[index > 0 && 'ml-112']"
           :key="item.description.title"
         >
@@ -21,32 +21,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { PropType } from 'vue'
 import ContentDoubleTimeLineComponent from './ContentDoubleTimeLineComponent.vue'
-const dataTimeLine = ref([
-  {
-    timeItems: ['Brand Consulting', 'Brand Strategy & Content Strategy'],
-    description: {
-      title: 'Consultancy & Brand Strategy',
-      content: 'Tư vấn chiến lược và mục tiêu thương hiệu'
-    }
-  },
-  {
-    timeItems: ['Brand Consulting', 'Brand Design Identity Systems'],
-    isNextCenter: true,
-    description: {
-      title: 'Brand Direction & Identity Systems',
-      content: 'Định hướng thương hiệu và  hệ thống nhận diện thương hiệu'
-    }
-  },
-  {
-    timeItems: ['Brand Maintant & Marketing'],
-    description: {
-      title: 'Maintaince & Marketing',
-      content: 'Quản trị và vận hành thương hiệu'
-    }
-  }
-])
+const props = defineProps({
+  dataTimeLine: Array as PropType<any[]>
+})
 </script>
 
 <style scoped lang="scss">

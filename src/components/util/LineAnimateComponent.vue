@@ -6,7 +6,6 @@
 const props = defineProps({
   color: String
 })
-console.log('props', props.color)
 </script>
 
 <style lang="scss" scoped>
