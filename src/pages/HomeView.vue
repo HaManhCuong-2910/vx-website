@@ -57,6 +57,16 @@
     height: 100%;
   }
 }
+
+@media screen and (max-width: 992px) {
+  .mt-250 {
+    margin-top: 130px;
+  }
+
+  .pb-100 {
+    padding-bottom: 0px;
+  }
+}
 </style>
 
 <script setup>

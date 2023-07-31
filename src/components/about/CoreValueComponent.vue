@@ -1,7 +1,7 @@
 <template>
-  <div class="flex lg:justify-between relative">
-    <span class="vector-ab"></span>
-    <div class="card-container">
+  <div class="flex lg:justify-between lg:flex-row flex-col relative">
+    <span class="vector-ab" v-if="!isMobile()"></span>
+    <div class="card-container first-border-bottom">
       <h3 class="font-family-helvetica">
         Đồng hành <br />
         và tận tâm
@@ -28,7 +28,9 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { isMobile } from '@/constant/helper'
+</script>
 
 <style scoped lang="scss">
 .vector-ab {
@@ -61,6 +63,40 @@
 
   &.pt-358 {
     padding-top: 358px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .card-container {
+    h3 {
+      font-size: 32px;
+      line-height: 56px;
+      letter-spacing: -0.32px;
+      font-weight: 500;
+      text-align: center;
+      br {
+        display: none;
+      }
+    }
+
+    &.first-border-bottom {
+      padding-bottom: 38px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+    }
+
+    p {
+      font-size: 14px;
+      text-align: center;
+      line-height: 20px;
+      margin-top: 12px;
+      br {
+        display: none;
+      }
+    }
+
+    &.pt-358 {
+      padding-top: 23px;
+    }
   }
 }
 </style>

@@ -181,6 +181,7 @@ const switchCard = (index) => {
       img {
         width: 25px;
         height: 25px;
+        object-fit: contain;
       }
 
       .content-mb {

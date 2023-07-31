@@ -52,4 +52,33 @@ import ConnectUsComponent from '../common/ConnectUsComponent.vue'
     line-height: 27px;
   }
 }
+
+@media screen and (max-width: 992px) {
+  .container-content {
+    h2 {
+      font-size: 32px;
+      line-height: 56px; /* 175% */
+      letter-spacing: -0.32px;
+      font-weight: 500;
+    }
+    p {
+      margin-top: 11px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+    }
+  }
+
+  .mt-89 {
+    margin-top: 60px;
+  }
+
+  .mt-346 {
+    margin-top: 86px;
+  }
+
+  .pb-149 {
+    padding-bottom: 0px;
+  }
+}
 </style>

@@ -3,14 +3,21 @@
     <div class="mt-276">
       <TextHistoryComponentVue />
     </div>
-    <div class="mt-62" v-for="(item, index) in dataHistories" :key="index">
-      <HistoryCardComponentVue :data="item" :index="index + 1" />
+    <div v-if="!isMobile()">
+      <div class="mt-62" v-for="(item, index) in dataHistories" :key="index">
+        <HistoryCardComponentVue :data="item" :index="index + 1" />
+      </div>
+    </div>
+    <div v-else>
+      <HistoryCardMobileComponent :dataHistories="dataHistories" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { isMobile } from '@/constant/helper'
 import HistoryCardComponentVue from './helper/HistoryCardComponent.vue'
+import HistoryCardMobileComponent from './helper/HistoryCardMobileComponent.vue'
 import TextHistoryComponentVue from './helper/TextHistoryComponent.vue'
 
 const dataHistories = [
@@ -46,5 +53,10 @@ const dataHistories = [
 }
 .mt-62 {
   margin-top: 62px;
+}
+@media screen and (max-width: 992px) {
+  .mt-276 {
+    margin-top: 127px;
+  }
 }
 </style>

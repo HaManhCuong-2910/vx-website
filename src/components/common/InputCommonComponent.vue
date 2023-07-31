@@ -83,4 +83,11 @@ const handleBlurField = () => {
   top: 50%;
   transform: translateY(-50%);
 }
+
+@media screen and (max-width: 992px) {
+  .input-common,
+  .errors-custom {
+    font-size: 20px;
+  }
+}
 </style>

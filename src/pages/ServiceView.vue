@@ -38,4 +38,18 @@ import ApproachesComponentVue from '@/components/service/ApproachesComponent.vue
     height: 100%;
   }
 }
+
+@media screen and (max-width: 992px) {
+  .mt-208 {
+    padding-top: 164px;
+  }
+
+  .banner {
+    background-position: 73% 0%;
+    background-size: initial;
+  }
+
+  .mt-91 {
+  }
+}
 </style>

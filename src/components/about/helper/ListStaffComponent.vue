@@ -1,5 +1,5 @@
 <template>
-  <div class="card-list-container grid lg:grid-cols-4 gap-x-4 gap-y-16">
+  <div class="card-list-container grid lg:grid-cols-4 grid-cols-1 gap-x-4 gap-y-16">
     <div class="card-item-container" v-for="item in listCard" :key="item">
       <div v-if="!item?.isJoin">
         <div class="img-card">
@@ -84,6 +84,25 @@ const redirectToRecruitment = () => {
     font-weight: 400;
     margin-top: 7px;
     line-height: normal;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .card-item-container {
+    .img-card {
+      height: 437.126px;
+    }
+
+    h3 {
+      font-size: 28px;
+      letter-spacing: -1.12px;
+      font-weight: 500;
+      margin-top: 26px;
+    }
+
+    p {
+      font-size: 15px;
+    }
   }
 }
 </style>

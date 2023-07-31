@@ -1,12 +1,12 @@
 <template>
-  <div class="flex justify-between" :class="!isFull && 'container-custom mx-auto'">
+  <div class="flex justify-between flex-mb" :class="!isFull && 'container-custom mx-auto'">
     <div>
-      <p class="title font-family-helvetica">
+      <p class="title font-family-helvetica" v-if="!props.hideTitle">
         Kết nối với chúng tôi để cùng <br />
         đồng hành với thương hiệu và tạo <br />
         nên câu chuyện của riêng bạn
       </p>
-      <p class="description">
+      <p class="description" :class="props.hideTitle && '!mt-0'">
         Liên hệ với chúng tôi để nhận tư vấn
         <font-awesome-icon :icon="['fas', 'arrow-right']" class="icon-arrow-right" />
       </p>
@@ -27,6 +27,7 @@
 import { onSetActive } from '@/constant/constant'
 const props = defineProps({
   isHideNextButton: Boolean,
+  hideTitle: Boolean,
   isFull: Boolean
 })
 </script>
@@ -67,6 +68,33 @@ const props = defineProps({
     &:hover {
       transition: 0.4s;
       background-color: #fff;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .title {
+    font-size: 24px;
+    line-height: 34px; /* 141.667% */
+    letter-spacing: -0.48px;
+  }
+  .flex-mb {
+    flex-direction: column;
+
+    .description {
+      font-size: 15px;
+      line-height: 21px;
+      margin-top: 23px;
+    }
+
+    .contain-right-btn {
+      align-self: flex-start;
+      margin-top: 37px;
+
+      .right-btn {
+        width: 85px;
+        height: 85px;
+      }
     }
   }
 }

@@ -96,3 +96,7 @@ export enum ETypeForm {
 export const handleResponseApi = (res: any) => {
   return res.data
 }
+
+export const removeBrTag = (text: string) => {
+  return text.replaceAll('<br />', '').replaceAll('<br/>', '')
+}

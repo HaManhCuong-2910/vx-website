@@ -1,13 +1,13 @@
 <template>
   <div class="mega-menu">
     <div class="container-custom mx-auto">
-      <div class="flex justify-between lg:mt-[23px] lg:pb-[41px]">
+      <div class="flex justify-between items-center mt-[23px] pb-[21px] lg:pb-[41px]">
         <router-link
           :to="{
             name: 'home'
           }"
         >
-          <img src="/icon/mega_menu_logo.svg" />
+          <img src="/icon/mega_menu_logo.svg" class="logo" />
         </router-link>
 
         <img
@@ -46,5 +46,16 @@ const onCloseMegaMenu = () => {
   background-color: #000;
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+@media screen and (max-width: 992px) {
+  img {
+    width: 27px;
+    height: 27px;
+    &.logo {
+      width: 110px;
+      height: 53.518px;
+    }
+  }
 }
 </style>

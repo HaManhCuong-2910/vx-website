@@ -1,8 +1,8 @@
 <template>
   <div class="bg-footer">
     <div class="container-custom mx-auto footer-container">
-      <div class="grid grid-cols-4 gap-x-10">
-        <div class="address-container">
+      <div class="grid grid-cols-1 lg:grid-cols-4 lg:gap-x-10 lg:gap-y-0 gap-y-10">
+        <div class="address-container order-last lg:order-none">
           <h3>Trụ sở văn phòng</h3>
           <div class="item-address">
             <h4>Địa chỉ:</h4>
@@ -84,10 +84,10 @@
             </ul>
           </div>
         </div>
-        <div>
+        <div class="order-first lg:order-none">
           <div class="register-container">
             <h3>Đăng ký nhận thông tin</h3>
-            <div class="lg:mt-7 relative">
+            <div class="lg:mt-7 mt-[20px] relative">
               <InputCommonComponent
                 v-model:value="data.name"
                 :style="'font-size: 20px;'"
@@ -100,7 +100,7 @@
           </div>
           <div class="social-container">
             <h3>Social Media</h3>
-            <div class="lg:mt-5 flex gap-x-5">
+            <div class="lg:mt-5 flex gap-x-5 mt-[20px]">
               <div v-for="item in listSocial" :key="item.svg" v-html="item.svg"></div>
             </div>
           </div>
@@ -186,9 +186,6 @@ h3 {
     }
   }
 }
-
-.register-container {
-}
 .social-container {
   margin-top: 185px;
 }
@@ -202,6 +199,60 @@ h3 {
       fill-opacity: 1;
       transition: 0.5s;
     }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .more-container {
+    width: 100%;
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 31px;
+    }
+    ul {
+      margin-top: 25px;
+
+      li {
+        font-size: 14px;
+        letter-spacing: 1.12px;
+      }
+    }
+  }
+
+  .bg-footer {
+    background-position: 80% 50%;
+    background-size: initial;
+  }
+
+  .address-container {
+    h3 {
+      font-size: 18px;
+      line-height: 31px;
+    }
+    .item-address {
+      margin-top: 18px;
+
+      h4 {
+        font-size: 14px;
+      }
+
+      p {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .register-container {
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 31px;
+    }
+  }
+
+  .social-container {
+    margin-top: 70px;
   }
 }
 </style>

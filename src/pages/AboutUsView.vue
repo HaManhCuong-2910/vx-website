@@ -12,7 +12,7 @@
     <MainIntroAboutComponentVue />
   </div>
   <div class="z-10 relative mt-14">
-    <div class="flex lg:justify-center">
+    <div class="flex justify-center">
       <div class="title-second">
         <h2 class="font-family-helvetica">Giá trị cốt lõi</h2>
       </div>
@@ -92,5 +92,28 @@ import TextMainIntroComponent from '@/components/about/helper/TextMainIntroCompo
 }
 .mt-83 {
   margin-top: 83px;
+}
+
+@media screen and (max-width: 992px) {
+  .pt-196 {
+    padding-top: 178px;
+  }
+  .pb-196 {
+    padding-bottom: 151px;
+  }
+  .mt-83 {
+    margin-top: 48px;
+  }
+  .title-second {
+    padding: 11px 15px 10px 15px;
+    h2 {
+      font-size: 12px;
+      letter-spacing: 1.08px;
+    }
+  }
+
+  .mt-208 {
+    margin-top: 91px;
+  }
 }
 </style>

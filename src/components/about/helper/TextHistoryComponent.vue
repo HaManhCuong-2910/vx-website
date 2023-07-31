@@ -28,4 +28,17 @@ p {
   line-height: 30px;
   margin-top: 19px;
 }
+
+@media screen and (max-width: 992px) {
+  h3 {
+    font-size: 22px;
+    line-height: 27px; /* 122.727% */
+    letter-spacing: -0.44px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
 </style>

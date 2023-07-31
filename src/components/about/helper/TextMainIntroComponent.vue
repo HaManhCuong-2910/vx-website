@@ -1,10 +1,10 @@
 <template>
   <div>
     <h2 class="font-family-helvetica">
-      Sứ mệnh của chúng tôi chính là giúp <br />
-      doanh nghiệp định hình lại mục tiêu, giải <br />
-      quyết những vấn đề của doanh nghiệp và <br />
-      vận hành thương hiệu một cách bài bản <br />
+      Sứ mệnh của chúng tôi chính là giúp <br v-if="!isMobile()" />
+      doanh nghiệp định hình lại mục tiêu, giải <br v-if="!isMobile()" />
+      quyết những vấn đề của doanh nghiệp và <br v-if="!isMobile()" />
+      vận hành thương hiệu một cách bài bản <br v-if="!isMobile()" />
       và có tổ chức hơn.
     </h2>
     <p class="description">
@@ -14,7 +14,9 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { isMobile } from '@/constant/helper'
+</script>
 
 <style scoped lang="scss">
 h2 {
@@ -33,8 +35,21 @@ h2 {
   font-weight: 400;
   line-height: 22px;
 
-  .icon-arrow-right{
+  .icon-arrow-right {
     margin-left: 7px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  h2 {
+    font-size: 22px;
+    line-height: 27px;
+  }
+
+  .description {
+    max-width: 240px;
+    font-size: 15px;
+    line-height: 21px;
   }
 }
 </style>

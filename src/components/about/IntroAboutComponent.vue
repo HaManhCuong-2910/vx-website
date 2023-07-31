@@ -1,6 +1,6 @@
 <template>
   <div class="intro-home container-custom mx-auto">
-    <div class="container-text flex">
+    <div class="container-text flex lg:flex-row flex-col">
       <div class="text-custom">
         <h1 class="font-family-helvetica">
           Tại sao lại là <br />
@@ -20,7 +20,7 @@
       </div>
       <div class="right-side">
         <img src="/about/vx_about.png" />
-        <div class="pt-8">
+        <div class="lg:pt-8 pt-[18px]">
           <p><span>V</span>isual e<span>X</span>perience</p>
           <p>Creative Studio</p>
         </div>
@@ -115,6 +115,46 @@ watch(
 
     span {
       color: #fff;
+    }
+  }
+}
+@media screen and (max-width: 992px) {
+  .intro-home {
+    padding-top: 200px;
+
+    .container-text {
+      padding-bottom: 21px;
+      .text-custom {
+        h1 {
+          font-size: 31px;
+          line-height: 38px;
+          letter-spacing: -0.62px;
+        }
+
+        p {
+          margin-top: 22px;
+          font-size: 16px;
+          line-height: 21px;
+
+          &:last-child {
+            margin-top: 14px;
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .right-side {
+    margin-top: 35px;
+    img {
+      width: 100%;
+    }
+
+    p {
+      font-size: 24px;
+      text-align: center;
     }
   }
 }
