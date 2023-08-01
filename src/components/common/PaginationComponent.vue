@@ -46,4 +46,21 @@
     }
   }
 }
+
+@media screen and (max-width: 992px) {
+  ::v-deep .pagination-block-el {
+    button {
+      width: 34.206px;
+    }
+    ul {
+      column-gap: 20px;
+      li {
+        min-width: 40.868px;
+        min-height: 40.868px;
+        font-size: 19.617px;
+        letter-spacing: 0.981px;
+      }
+    }
+  }
+}
 </style>

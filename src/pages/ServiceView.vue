@@ -45,7 +45,7 @@ import ApproachesComponentVue from '@/components/service/ApproachesComponent.vue
   }
 
   .banner {
-    background-position: 73% 0%;
+    background-position: 0px -611px;
     background-size: initial;
   }
 

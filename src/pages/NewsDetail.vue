@@ -46,4 +46,15 @@ import IntroSlideProjectComponent from '@/components/project/IntroSlideProjectCo
     object-fit: cover;
   }
 }
+
+@media screen and (max-width: 992px) {
+  .banner {
+    padding-top: 95px;
+    background-color: #3939e5;
+    height: auto;
+    img {
+      height: 212px;
+    }
+  }
+}
 </style>

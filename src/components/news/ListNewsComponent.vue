@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-36">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-10 lg:gap-y-36 gap-y-16">
     <div class="container-card" @click="redirectToDetail('id-test')">
       <div class="contain-img">
         <img src="/img/brand_slide.png" />
@@ -216,6 +216,36 @@ const redirectToDetail = (id: string) => {
         border-radius: 50%;
         background-color: #3939e5;
         margin-left: 7px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .container-card {
+    .contain-img {
+      height: 256px;
+    }
+
+    .card-content {
+      .title {
+        font-size: 12px;
+        letter-spacing: 0.84px;
+      }
+      .content {
+        margin-top: 10px;
+        font-size: 22px;
+        line-height: 27px; /* 122.727% */
+        letter-spacing: -0.44px;
+      }
+
+      .breaking-news {
+        margin-top: 15px;
+
+        p {
+          font-size: 15px;
+          line-height: 21px; /* 140% */
+        }
       }
     }
   }

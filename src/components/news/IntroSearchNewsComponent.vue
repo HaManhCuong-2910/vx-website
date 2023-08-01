@@ -34,9 +34,10 @@ h1 {
   justify-content: center;
   padding-top: 31px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
+  overflow-x: scroll;
   ul {
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
     gap: 30px;
     li {
       padding: 20px 25px;
@@ -50,6 +51,25 @@ h1 {
       line-height: normal;
       letter-spacing: 1px;
       text-transform: uppercase;
+      white-space: nowrap;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  h1 {
+    font-size: 80px;
+    letter-spacing: -1.927px;
+    padding-bottom: 40px;
+  }
+  .list-item {
+    ul {
+      gap: 10px;
+      li {
+        padding: 10.314px 12.892px;
+        font-size: 10.314px;
+        letter-spacing: 0.516px;
+      }
     }
   }
 }

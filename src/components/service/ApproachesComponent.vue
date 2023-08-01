@@ -13,7 +13,8 @@
     </div>
   </div>
   <div class="mt-162">
-    <ApproachesTimeLineComponent :data-time-line="dataTimeLine" />
+    <ApproachesTimeLineComponent :data-time-line="dataTimeLine" v-if="!isMobile()" />
+    <ApproachesTimeLineMobileComponent :data-time-line="dataTimeLine" v-else />
   </div>
   <div class="mt-128">
     <div class="container-custom mx-auto">
@@ -29,12 +30,13 @@
     </div>
   </div>
   <div class="mt-162">
-    <ApproachesTimeLineComponent :data-time-line="dataTimeLine" />
+    <ApproachesTimeLineComponent :data-time-line="dataTimeLine" v-if="!isMobile()" />
+    <ApproachesTimeLineMobileComponent :data-time-line="dataTimeLine" v-else />
   </div>
   <div class="mt-309">
     <ListServiceComponent />
   </div>
-  <div class="mt-162 pb-100">
+  <div class="mt-162" :class="!isMobile() && 'pb-100'">
     <ConnectUsComponent />
   </div>
 </template>
@@ -44,7 +46,10 @@ import ApproachesTimeLineComponent from './helper/ApproachesTimeLineComponent.vu
 import LineAnimateComponent from '../util/LineAnimateComponent.vue'
 import ListServiceComponent from '../common/ListServiceComponent.vue'
 import ConnectUsComponent from '../common/ConnectUsComponent.vue'
+import ApproachesTimeLineMobileComponent from './helper/ApproachesTimeLineMobileComponent.vue'
+
 import { ref } from 'vue'
+import { isMobile } from '@/constant/helper'
 
 const dataTimeLine = ref([
   {
@@ -118,6 +123,13 @@ const dataTimeLine = ref([
   }
   .mt-63 {
     margin-top: 25px;
+  }
+
+  .mt-162 {
+    margin-top: 29px;
+  }
+  .mt-309 {
+    margin-top: 146px;
   }
 
   .title-procedure {
