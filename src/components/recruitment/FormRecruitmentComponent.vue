@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="lg:mt-[40px]">
+    <div class="mt-[40px]">
       <InputCommonComponent
         :placeholder="'Họ và tên:'"
         v-model:value="data.fullName"
@@ -8,7 +8,7 @@
         @blurField="validate('fullName')"
       />
     </div>
-    <div class="lg:mt-[40px]">
+    <div class="mt-[40px]">
       <InputCommonComponent
         :placeholder="'Email:'"
         v-model:value="data.email"
@@ -16,7 +16,7 @@
         @blurField="validate('email')"
       />
     </div>
-    <div class="lg:mt-[40px]">
+    <div class="mt-[40px]">
       <InputCommonComponent
         :placeholder="'Số điện thoại liên hệ:'"
         v-model:value="data.phoneNumber"
@@ -24,7 +24,7 @@
         @blurField="validate('phoneNumber')"
       />
     </div>
-    <div class="lg:mt-[40px]">
+    <div class="mt-[40px]">
       <InputCommonComponent
         :placeholder="'Chức vụ mà bạn quan tâm:'"
         :disabled="true"
@@ -40,7 +40,7 @@
         </template>
       </InputCommonComponent>
     </div>
-    <div class="lg:mt-[40px]">
+    <div class="mt-[40px]">
       <TextAreaCommonComponent
         :placeholder="'Giới thiệu đôi điều về bạn:'"
         v-model:value="data.storySel"
@@ -48,7 +48,7 @@
         :error="errors?.storySel"
       />
     </div>
-    <div class="lg:mt-[40px]">
+    <div class="mt-[40px]">
       <InputCommonComponent
         :placeholder="'Đính kèm file Portfolio:'"
         :disabled="true"
@@ -63,7 +63,7 @@
         </template>
       </InputCommonComponent>
     </div>
-    <div class="lg:mt-[92px] text-end">
+    <div class="mt-[92px] lg:text-end">
       <button class="btn-submit" @click="handleSubmit">gửi lời nhắn</button>
     </div>
   </div>
@@ -214,5 +214,22 @@ onMounted(() => {
   line-height: normal;
   letter-spacing: 1px;
   text-transform: uppercase;
+}
+
+@media screen and (max-width: 992px) {
+  ::v-deep .input-common {
+    font-size: 14px;
+  }
+
+  ::v-deep .errors-custom {
+    font-size: 14px;
+  }
+
+  .btn-submit {
+    padding: 20px 22.727px 18.182px 22.727px;
+    font-size: 17px;
+    background: #3939e5;
+    border: unset;
+  }
 }
 </style>

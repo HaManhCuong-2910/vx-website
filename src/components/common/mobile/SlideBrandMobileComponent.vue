@@ -1,5 +1,5 @@
 <template>
-  <div class="container-custom mx-auto">
+  <div class="container-custom mx-auto" :class="props.theme ? props.theme : ''">
     <div class="slide-items" v-for="item in slideBrand" :key="item.tag">
       <p class="tag">{{ item.tag }}</p>
       <h2 class="font-family-helvetica">
@@ -16,6 +16,9 @@
 
 <script setup lang="ts">
 import { slideBrand } from '@/constant/constant'
+const props = defineProps({
+  theme: String
+})
 </script>
 
 <style scoped lang="scss">
@@ -42,6 +45,23 @@ import { slideBrand } from '@/constant/constant'
     letter-spacing: -0.44px;
     margin-top: 13px;
     max-width: 322px;
+  }
+}
+
+.dark {
+  .slide-items {
+    border-top: 1px solid rgba(0, 0, 0, 0.22);
+    .tag {
+      color: rgba(0, 0, 0, 0.65);
+    }
+    h2 {
+      color: #000;
+    }
+    .breaking-news {
+      p {
+        color: #000;
+      }
+    }
   }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container lg:mt-[180px]">
+    <div class="lg:container lg:mt-[180px] mt-[79px]">
       <p class="tag">#INSIGHT</p>
       <h1 class="font-family-helvetica">
         Thay đổi ánh nhìn của chủ doanh nghiệp về xây dựng hình ảnh thương hiệu
@@ -38,5 +38,19 @@ h1 {
   line-height: 78px; /* 108.333% */
   letter-spacing: -1.44px;
   margin-top: 14px;
+}
+
+@media screen and (max-width: 992px) {
+  .tag {
+    font-size: 12px;
+    letter-spacing: 0.84px;
+  }
+  h1 {
+    margin-top: 10px;
+    font-size: 32px;
+    line-height: 40px; /* 125% */
+    font-weight: 500;
+    letter-spacing: -0.96px;
+  }
 }
 </style>

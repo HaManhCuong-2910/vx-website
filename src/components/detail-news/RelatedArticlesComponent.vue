@@ -2,11 +2,61 @@
   <div>
     <h2>BÀI VIẾT LIÊN QUAN</h2>
     <ul>
-      <li>Trí tuệ nhân tạo và con người có thể song hành cùng nhau được hay không?</li>
-      <li>Trí tuệ nhân tạo và con người có thể song hành cùng nhau được hay không?</li>
-      <li>Trí tuệ nhân tạo và con người có thể song hành cùng nhau được hay không?</li>
-      <li>Trí tuệ nhân tạo và con người có thể song hành cùng nhau được hay không?</li>
-      <li>Trí tuệ nhân tạo và con người có thể song hành cùng nhau được hay không?</li>
+      <li>
+        <router-link
+          :to="{
+            name: 'DetailNews',
+            params: {
+              id: 'id-check'
+            }
+          }"
+          >Trí tuệ nhân tạo và con người có thể song hành cùng nhau được hay không?</router-link
+        >
+      </li>
+      <li>
+        <router-link
+          :to="{
+            name: 'DetailNews',
+            params: {
+              id: 'id-check'
+            }
+          }"
+          >Trí tuệ nhân tạo và con người có thể song hành cùng nhau được hay không?</router-link
+        >
+      </li>
+      <li>
+        <router-link
+          :to="{
+            name: 'DetailNews',
+            params: {
+              id: 'id-check'
+            }
+          }"
+          >Trí tuệ nhân tạo và con người có thể song hành cùng nhau được hay không?</router-link
+        >
+      </li>
+      <li>
+        <router-link
+          :to="{
+            name: 'DetailNews',
+            params: {
+              id: 'id-check'
+            }
+          }"
+          >Trí tuệ nhân tạo và con người có thể song hành cùng nhau được hay không?</router-link
+        >
+      </li>
+      <li>
+        <router-link
+          :to="{
+            name: 'DetailNews',
+            params: {
+              id: 'id-check'
+            }
+          }"
+          >Trí tuệ nhân tạo và con người có thể song hành cùng nhau được hay không?</router-link
+        >
+      </li>
     </ul>
   </div>
 </template>
@@ -38,6 +88,12 @@ ul {
     border-bottom: 1px solid rgba(0, 0, 0, 0.13);
     position: relative;
 
+    a {
+      &:hover {
+        color: #3939e5;
+      }
+    }
+
     &::after {
       position: absolute;
       content: '';
@@ -51,6 +107,25 @@ ul {
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  h2 {
+    padding-bottom: 26px;
+  }
+
+  ul {
+    li {
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 18px; /* 138.462% */
+
+      a {
+        display: block;
+        max-width: 290px;
+      }
     }
   }
 }

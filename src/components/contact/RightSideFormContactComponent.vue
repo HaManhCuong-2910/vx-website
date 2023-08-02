@@ -1,28 +1,30 @@
 <template>
   <div>
-    <div class="lg:mt-[40px]">
+    <div class="mt-[40px]">
       <InputCommonComponent
         :placeholder="'Tên thương hiệu của bạn:'"
         v-model:value="data.brandName"
       />
     </div>
-    <div class="lg:mt-[40px]">
+    <div class="mt-[40px]">
       <InputCommonComponent :placeholder="'Email doanh nghiệp:'" v-model:value="data.email" />
     </div>
-    <div class="lg:mt-[40px]">
+    <div class="mt-[40px]">
       <InputCommonComponent
         :placeholder="'Số điện thoại liên hệ:'"
         v-model:value="data.phoneNumber"
       />
     </div>
-    <div class="lg:mt-[40px]">
+    <div class="mt-[40px]">
       <TextAreaCommonComponent
         :placeholder="'Hãy kể câu chuyện thương hiệu của bạn:'"
         v-model:value="data.storyBrand"
       />
     </div>
 
-    <div class="lg:mt-[92px] text-end"><button class="btn-submit">gửi lời nhắn</button></div>
+    <div class="mt-[92px] lg:text-end">
+      <button class="btn-submit">gửi lời nhắn</button>
+    </div>
   </div>
 </template>
 
@@ -52,5 +54,17 @@ const data = reactive({
   line-height: normal;
   letter-spacing: 1px;
   text-transform: uppercase;
+}
+
+@media screen and (max-width: 992px) {
+  ::v-deep .input-common {
+    font-size: 14px;
+  }
+  .btn-submit {
+    padding: 20px 22.727px 18.182px 22.727px;
+    font-size: 17px;
+    background: #3939e5;
+    border: unset;
+  }
 }
 </style>

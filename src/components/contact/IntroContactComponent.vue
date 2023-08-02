@@ -19,4 +19,15 @@ h1 {
   line-height: 85px; /* 118.056% */
   letter-spacing: -1.44px;
 }
+
+@media screen and (max-width: 992px) {
+  h1 {
+    font-size: 32px;
+    line-height: 40px; /* 125% */
+    letter-spacing: -1.28px;
+    br {
+      display: none;
+    }
+  }
+}
 </style>

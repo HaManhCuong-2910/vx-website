@@ -1,7 +1,9 @@
 <template>
-  <div class="flex" style="cursor: pointer" @click="chooseFile">
+  <div class="flex items-center" style="cursor: pointer" @click="chooseFile">
     <p>{{ props?.nameFile || 'File đính kèm' }}</p>
-    <img src="@/assets/icon/plus-icon.svg" />
+    <div class="icon-plush-contain">
+      <img src="@/assets/icon/plus-icon.svg" />
+    </div>
     <input type="file" hidden ref="ElFile" @change="handleChangeFile()" />
   </div>
 </template>
@@ -35,5 +37,21 @@ p {
   font-weight: 400;
   line-height: 31px; /* 129.167% */
   margin-right: 24px;
+}
+
+@media screen and (max-width: 992px) {
+  p {
+    display: none;
+    font-size: 14px;
+  }
+  .icon-plush-contain {
+    width: 21px;
+    height: 21px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
 }
 </style>

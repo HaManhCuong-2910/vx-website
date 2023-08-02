@@ -55,4 +55,16 @@ const handleChange = (item) => {
   line-height: 31px;
   padding: 10px 16px;
 }
+
+@media screen and (max-width: 992px) {
+  .custom-dropdown {
+    .el-dropdown-link {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+  ::v-deep .el-dropdown-menu__item {
+    font-size: 14px;
+  }
+}
 </style>

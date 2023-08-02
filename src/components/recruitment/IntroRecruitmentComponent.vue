@@ -5,13 +5,15 @@
       sẽ là cơ hội phát triển không <br />
       chỉ của riêng bạn
     </h1>
-    <div class="icon-scroll">
+    <div class="icon-scroll" v-if="!isMobile()">
       <img src="@/assets/icon/scroll_down.gif" />
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { isMobile } from '@/constant/helper'
+</script>
 
 <style scoped lang="scss">
 h1 {
@@ -30,6 +32,14 @@ h1 {
   img {
     width: 100%;
     height: 100%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  h1 {
+    font-size: 32px;
+    line-height: 40px; /* 125% */
+    letter-spacing: -1.28px;
   }
 }
 </style>

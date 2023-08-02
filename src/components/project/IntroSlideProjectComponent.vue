@@ -1,5 +1,8 @@
 <template>
-  <div class="container-custom mx-auto mt-215" :class="props.theme ? props.theme : ''">
+  <div
+    class="container-custom mx-auto"
+    :class="[props.theme ? props.theme : '', props.hideMarginTop ? '' : 'mt-215']"
+  >
     <div class="grid lg:grid-cols-2 gap-x-10">
       <div class="lg:block flex items-end justify-between">
         <h1 class="font-family-helvetica">
@@ -25,7 +28,8 @@ import { isMobile } from '@/constant/helper'
 import WatchMoreComponentVue from '../common/until/WatchMoreComponent.vue'
 
 const props = defineProps({
-  theme: String
+  theme: String,
+  hideMarginTop: Boolean
 })
 </script>
 
