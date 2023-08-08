@@ -97,6 +97,8 @@ export const handleResponseApi = (res: any) => {
   return res.data
 }
 
+export const BaseURLImage = import.meta.env.VITE_APP_API_END_POINT
+
 export const removeBrTag = (text: string) => {
   return text.replaceAll('<br />', '').replaceAll('<br/>', '')
 }

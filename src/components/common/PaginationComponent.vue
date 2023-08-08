@@ -1,10 +1,34 @@
 <template>
   <div class="pagination-block">
-    <el-pagination class="pagination-block-el" layout="prev, pager, next" :total="50" />
+    <el-pagination
+      class="pagination-block-el"
+      layout="prev, pager, next"
+      :page-count="props.count || 1"
+      :current-page="props.page || 1"
+      @current-change="handleChangePage"
+    />
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useRoute, useRouter } from 'vue-router'
+const props = defineProps({
+  count: Number,
+  page: Number
+})
+const route = useRoute()
+const router = useRouter()
+const handleChangePage = (page: number) => {
+  const query = route.query
+  router.replace({
+    path: route.path,
+    query: {
+      ...query,
+      page
+    }
+  })
+}
+</script>
 
 <style scoped lang="scss">
 ::v-deep .pagination-block-el {

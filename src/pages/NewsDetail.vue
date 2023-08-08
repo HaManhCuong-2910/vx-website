@@ -1,14 +1,14 @@
 <template>
-  <div class="bg-white">
+  <div class="bg-white" v-if="data">
     <div class="banner">
-      <img src="/img/brand_slide.png" />
+      <img :src="`${BaseURLImage}${data.imgs}`" />
     </div>
     <div class="lg:container container-custom mx-auto">
-      <IntroDetailNewsComponentVue />
+      <IntroDetailNewsComponentVue :data="data" />
       <div class="lg:pt-[34px] pt-[52px] lg:pb-[30px] pb-[24px]">
         <LineAnimateComponent :color="'rgba(0, 0, 0, 0.10)'" />
       </div>
-      <ContentDetailNewComponentVue />
+      <ContentDetailNewComponentVue :data="data" />
       <div class="lg:mt-[77px] mt-[56px]">
         <RelatedArticlesComponentVue />
       </div>
@@ -39,6 +39,20 @@ import SlideBrandComponent from '@/components/common/SlideBrandComponent.vue'
 import SlideBrandMobileComponent from '@/components/common/mobile/SlideBrandMobileComponent.vue'
 import IntroSlideProjectComponent from '@/components/project/IntroSlideProjectComponent.vue'
 import { isMobile } from '@/constant/helper'
+import { onMounted, ref } from 'vue'
+import { useRoute } from 'vue-router'
+import { getDetailNewsApi } from '@/api/news'
+import { useStore } from 'vuex'
+import { BaseURLImage } from '@/constant/constant'
+const route = useRoute()
+const store = useStore()
+const data = ref<any>(null)
+onMounted(async () => {
+  store.commit('setLoadingGlobal', true)
+  const [res, error] = await getDetailNewsApi(route.params.id as string)
+  data.value = res.data
+  store.commit('setLoadingGlobal', false)
+})
 </script>
 
 <style scoped lang="scss">

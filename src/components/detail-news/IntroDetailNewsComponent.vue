@@ -3,10 +3,10 @@
     <div class="lg:container lg:mt-[180px] mt-[79px]">
       <p class="tag">#INSIGHT</p>
       <h1 class="font-family-helvetica">
-        Thay đổi ánh nhìn của chủ doanh nghiệp về xây dựng hình ảnh thương hiệu
+        {{ props.data.title }}
       </h1>
       <div class="breaking-news lg:mt-[28px]">
-        <p>10.11.2022 - TRENDING</p>
+        <p>{{ moment(props.data.updatedAt).format('DD.MM.YYYY') }} - {{ props.data.tag }}</p>
         <span class="bg-primary"></span>
         <p>News</p>
       </div>
@@ -14,7 +14,14 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import moment from 'moment'
+import { PropType } from 'vue'
+
+const props = defineProps({
+  data: Object as PropType<any>
+})
+</script>
 
 <style scoped lang="scss">
 .breaking-news {

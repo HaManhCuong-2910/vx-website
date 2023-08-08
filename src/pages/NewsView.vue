@@ -10,9 +10,9 @@
     <IntroSearchNewsComponentVue />
   </div>
   <div class="mt-188 container-custom mx-auto">
-    <ListNewsComponentVue />
+    <ListNewsComponentVue :data="data.listData" />
     <div class="lg:mt-[137px] mt-[85px] flex justify-center">
-      <PaginationComponentVue />
+      <PaginationComponentVue :page="data.page" :count="data.count" />
     </div>
   </div>
   <div class="lg:mt-[281px] mt-[158px] lg:pb-[149px]">
@@ -30,6 +30,49 @@ import ListNewsComponentVue from '@/components/news/ListNewsComponent.vue'
 import PaginationComponentVue from '@/components/common/PaginationComponent.vue'
 import ConnectUsComponent from '@/components/common/ConnectUsComponent.vue'
 import { isMobile } from '@/constant/helper'
+import { onMounted, reactive, watch } from 'vue'
+import { getListNewsApi } from '@/api/news/index'
+import { useRoute, useRouter } from 'vue-router'
+import { useStore } from 'vuex'
+
+const route = useRoute()
+const router = useRouter()
+const store = useStore()
+const data = reactive({
+  count: 1,
+  page: 1,
+  listData: null
+})
+const handleGetListNews = async () => {
+  store.commit('setLoadingGlobal', true)
+  const query = route.query
+  const [res, error] = await getListNewsApi(query)
+  data.count = res.count
+  data.page = res.page
+  data.listData = res.data
+  console.log('res', res)
+  store.commit('setLoadingGlobal', false)
+}
+
+watch(
+  () => route.query,
+  async () => {
+    await handleGetListNews()
+  }
+)
+
+onMounted(async () => {
+  if (Object.keys(route.query).length === 0) {
+    router.replace({
+      path: route.path,
+      query: {
+        page: 1
+      }
+    })
+  } else {
+    await handleGetListNews()
+  }
+})
 </script>
 
 <style scoped lang="scss">

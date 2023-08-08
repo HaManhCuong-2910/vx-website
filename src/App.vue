@@ -13,6 +13,7 @@
 <script setup lang="ts">
 import { onMounted, reactive, watch } from 'vue'
 import { RouterLink, RouterView, useRoute } from 'vue-router'
+
 const route = useRoute()
 
 const data = reactive({

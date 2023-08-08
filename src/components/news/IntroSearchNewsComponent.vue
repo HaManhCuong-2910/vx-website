@@ -34,10 +34,11 @@ h1 {
   justify-content: center;
   padding-top: 31px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
-  overflow-x: scroll;
+  overflow-x: auto;
   ul {
     width: 100%;
     display: flex;
+    justify-content: center;
     gap: 30px;
     li {
       padding: 20px 25px;
@@ -64,6 +65,7 @@ h1 {
   }
   .list-item {
     ul {
+      justify-content: start;
       gap: 10px;
       li {
         padding: 10.314px 12.892px;
