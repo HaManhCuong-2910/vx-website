@@ -5,10 +5,10 @@
   <MissionComponentVue />
   <ShowProductsComponentVue />
   <AvisComponentVue />
-  <PartnerComponentVue />
-  <div class="mt-250 bg-service">
-    <ListServiceComponentVue />
-    <div class="mt-250 pb-100 relative z-10">
+  <!-- <PartnerComponentVue /> -->
+  <div class="mt-250">
+    <!-- <ListServiceComponentVue /> -->
+    <div class="pb-100 relative z-10">
       <ConnectUsComponent />
     </div>
   </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="lg:mb-[75px]">
+  <div class="lg:mb-[75px] mb-[44px]">
     <h2>{{ props.data.short_description }}</h2>
   </div>
   <div v-html="props.data.description"></div>
@@ -29,8 +29,21 @@ h2 {
 }
 ::v-deep img {
   width: 100%;
+  object-fit: cover;
 }
 ::v-deep .ql-align-center {
   text-align: center;
+}
+
+@media screen and (max-width: 992px) {
+  ::v-deep p {
+    font-size: 14px;
+    line-height: 20px; /* 142.857% */
+  }
+
+  h2 {
+    font-size: 24px;
+    line-height: 33px; /* 137.5% */
+  }
 }
 </style>

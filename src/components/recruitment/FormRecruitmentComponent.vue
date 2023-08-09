@@ -150,36 +150,44 @@ const handleSubmit = async () => {
   dataSchema
     .validate(data, { abortEarly: false })
     .then(async () => {
-      const loading = ElLoading.service({
-        lock: true,
-        text: 'Loading',
-        background: 'rgba(0, 0, 0, 0.7)'
-      })
-      const formData = new FormData()
-      formData.append('fullName', data.fullName)
-      formData.append('email', data.email)
-      formData.append('phoneNumber', data.phoneNumber)
-      formData.append('position', data.position)
-      formData.append('introduction', data.storySel)
-      formData.append('fileCV', data.attachmentFile)
+      try {
+        const loading = ElLoading.service({
+          lock: true,
+          text: 'Loading',
+          background: 'rgba(0, 0, 0, 0.7)'
+        })
+        const formData = new FormData()
+        formData.append('fullName', data.fullName)
+        formData.append('email', data.email)
+        formData.append('phoneNumber', data.phoneNumber)
+        formData.append('position', data.position)
+        formData.append('introduction', data.storySel)
+        formData.append('fileCV', data.attachmentFile)
 
-      const [res, err] = await sendRecruitmentApi(formData)
-      if (err) {
+        const [res, err] = await sendRecruitmentApi(formData)
+        if (err) {
+          ElMessage({
+            message: 'Gửi lời nhắn không thành công',
+            type: 'error'
+          })
+          return
+        }
         ElMessage({
-          message: 'Gửi lời nhắn không thành công',
+          message: 'Gửi lời nhắn thành công',
+          type: 'success'
+        })
+
+        loading.close()
+        router.push({
+          name: 'home'
+        })
+      } catch (error) {
+        ElMessage({
+          message: error,
           type: 'error'
         })
         return
       }
-      ElMessage({
-        message: 'Gửi lời nhắn thành công',
-        type: 'success'
-      })
-
-      loading.close()
-      router.push({
-        name: 'home'
-      })
     })
     .catch((err) => {
       err.inner.forEach((error: { path: any; message: string }) => {

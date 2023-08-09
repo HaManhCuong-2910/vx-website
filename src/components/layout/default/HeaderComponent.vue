@@ -93,7 +93,12 @@
   <Transition name="nave-fade">
     <MegaMenuComponentVue v-if="isShowNav" @closeMegaMenu="isShowNav = false" />
   </Transition>
-  <el-button v-loading.fullscreen.lock="fullscreenLoading" type="primary" v-show="false">
+  <el-button
+    v-loading.fullscreen="fullscreenLoading"
+    element-loading-background="rgba(0, 0, 0, 0.7)"
+    type="primary"
+    v-show="false"
+  >
     As a directive
   </el-button>
 </template>

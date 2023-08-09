@@ -7,7 +7,7 @@
     <SlideBrandMobileComponent v-else />
   </div>
   <div class="mt-175 container-custom mx-auto">
-    <IntroSearchNewsComponentVue />
+    <IntroSearchNewsComponentVue :data="dataFilter" />
   </div>
   <div class="mt-188 container-custom mx-auto">
     <ListNewsComponentVue :data="data.listData" />
@@ -30,8 +30,8 @@ import ListNewsComponentVue from '@/components/news/ListNewsComponent.vue'
 import PaginationComponentVue from '@/components/common/PaginationComponent.vue'
 import ConnectUsComponent from '@/components/common/ConnectUsComponent.vue'
 import { isMobile } from '@/constant/helper'
-import { onMounted, reactive, watch } from 'vue'
-import { getListNewsApi } from '@/api/news/index'
+import { onMounted, reactive, watch, ref } from 'vue'
+import { getListFilter, getListNewsApi } from '@/api/news/index'
 import { useRoute, useRouter } from 'vue-router'
 import { useStore } from 'vuex'
 
@@ -43,14 +43,18 @@ const data = reactive({
   page: 1,
   listData: null
 })
+const dataFilter = ref<any>()
 const handleGetListNews = async () => {
   store.commit('setLoadingGlobal', true)
   const query = route.query
-  const [res, error] = await getListNewsApi(query)
+  const [[res, err], [resFilter, errFilter]] = await Promise.all([
+    getListNewsApi(query),
+    getListFilter()
+  ])
   data.count = res.count
   data.page = res.page
   data.listData = res.data
-  console.log('res', res)
+  dataFilter.value = resFilter.data
   store.commit('setLoadingGlobal', false)
 }
 

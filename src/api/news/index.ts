@@ -12,6 +12,15 @@ export const getListNewsApi = async (query?: any) => {
   }
 }
 
+export const getListFilter = async () => {
+  try {
+    const res = await instance.get('/news/list-filter')
+    return [handleResponseApi(res), null]
+  } catch (err: any) {
+    return [null, err]
+  }
+}
+
 export const getDetailNewsApi = async (id: string) => {
   try {
     const res = await instance.get(`/news/${id}/detail`)

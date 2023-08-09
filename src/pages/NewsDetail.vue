@@ -39,7 +39,7 @@ import SlideBrandComponent from '@/components/common/SlideBrandComponent.vue'
 import SlideBrandMobileComponent from '@/components/common/mobile/SlideBrandMobileComponent.vue'
 import IntroSlideProjectComponent from '@/components/project/IntroSlideProjectComponent.vue'
 import { isMobile } from '@/constant/helper'
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { getDetailNewsApi } from '@/api/news'
 import { useStore } from 'vuex'
@@ -47,6 +47,16 @@ import { BaseURLImage } from '@/constant/constant'
 const route = useRoute()
 const store = useStore()
 const data = ref<any>(null)
+watch(
+  () => route.params.id,
+  async () => {
+    store.commit('setLoadingGlobal', true)
+    const [res, error] = await getDetailNewsApi(route.params.id as string)
+    data.value = res.data
+    store.commit('setLoadingGlobal', false)
+  }
+)
+
 onMounted(async () => {
   store.commit('setLoadingGlobal', true)
   const [res, error] = await getDetailNewsApi(route.params.id as string)

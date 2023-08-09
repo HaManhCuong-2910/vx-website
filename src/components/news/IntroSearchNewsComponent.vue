@@ -3,19 +3,38 @@
     <h1 class="font-family-helvetica">TIN TỨC</h1>
     <div class="list-item">
       <ul>
-        <li>ALL</li>
-        <li>CASE STUDY</li>
-        <li>Business</li>
-        <li>trending</li>
-        <li>marketing</li>
-        <li>philosophy</li>
-        <li>graphic design</li>
+        <li
+          v-for="item in props.data"
+          :key="item"
+          class="cursor-pointer"
+          @click="searchFilter(item)"
+        >
+          {{ item }}
+        </li>
       </ul>
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { PropType } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+const route = useRoute()
+const router = useRouter()
+const props = defineProps({
+  data: Array as PropType<any[]>
+})
+
+const searchFilter = (item: string) => {
+  router.replace({
+    path: route.path,
+    query: {
+      ...route.query,
+      tag: item
+    }
+  })
+}
+</script>
 
 <style scoped lang="scss">
 h1 {
