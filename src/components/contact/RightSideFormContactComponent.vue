@@ -140,6 +140,9 @@ const handleSubmit = async () => {
   ::v-deep .input-common {
     font-size: 14px;
   }
+  ::v-deep .errors-custom {
+    font-size: 14px;
+  }
   .btn-submit {
     padding: 20px 22.727px 18.182px 22.727px;
     font-size: 17px;
