@@ -2,66 +2,32 @@
   <div>
     <h2>BÀI VIẾT LIÊN QUAN</h2>
     <ul>
-      <li>
+      <li v-for="item in data" :key="item._id">
         <router-link
           :to="{
             name: 'DetailNews',
             params: {
-              id: 'id-check'
+              id: item._id
             }
           }"
-          >Trí tuệ nhân tạo và con người có thể song hành cùng nhau được hay không?</router-link
-        >
-      </li>
-      <li>
-        <router-link
-          :to="{
-            name: 'DetailNews',
-            params: {
-              id: 'id-check'
-            }
-          }"
-          >Trí tuệ nhân tạo và con người có thể song hành cùng nhau được hay không?</router-link
-        >
-      </li>
-      <li>
-        <router-link
-          :to="{
-            name: 'DetailNews',
-            params: {
-              id: 'id-check'
-            }
-          }"
-          >Trí tuệ nhân tạo và con người có thể song hành cùng nhau được hay không?</router-link
-        >
-      </li>
-      <li>
-        <router-link
-          :to="{
-            name: 'DetailNews',
-            params: {
-              id: 'id-check'
-            }
-          }"
-          >Trí tuệ nhân tạo và con người có thể song hành cùng nhau được hay không?</router-link
-        >
-      </li>
-      <li>
-        <router-link
-          :to="{
-            name: 'DetailNews',
-            params: {
-              id: 'id-check'
-            }
-          }"
-          >Trí tuệ nhân tạo và con người có thể song hành cùng nhau được hay không?</router-link
+          >{{ item.title }}</router-link
         >
       </li>
     </ul>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { getRandomListNews } from '@/api/news'
+import { onMounted, ref } from 'vue'
+
+const data = ref<any[]>([])
+
+onMounted(async () => {
+  const [res, err] = await getRandomListNews()
+  data.value = res.data
+})
+</script>
 
 <style scoped lang="scss">
 h2 {

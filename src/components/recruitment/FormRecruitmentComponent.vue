@@ -74,7 +74,7 @@ import InputCommonComponent from '@/components/common/InputCommonComponent.vue'
 import TextAreaCommonComponent from '@/components/common/TextAreaCommonComponent.vue'
 import DropdownOptionComponent from './DropdownOptionComponent.vue'
 import { onMounted, reactive, ref, watch } from 'vue'
-import { dataDropdownOption } from '@/constant/constant'
+import { dataDropdownOption, validatePhoneNumber } from '@/constant/constant'
 import FileRecruitmentComponentVue from './FileRecruitmentComponent.vue'
 import * as yup from 'yup'
 import { ElLoading, ElMessage } from 'element-plus'
@@ -97,7 +97,12 @@ const errors = ref<any>({})
 const dataSchema = yup.object().shape({
   fullName: yup.string().required('Họ và tên không được bỏ trống'),
   email: yup.string().required('Email không được bỏ trống').email('Email không hợp lệ'),
-  phoneNumber: yup.string().required('Số điện thoại không được bỏ trống'),
+  phoneNumber: yup
+    .string()
+    .required('Số điện thoại không được bỏ trống')
+    .test('testPhone', 'Số điện thoại không đúng định dạng', (value) => {
+      return validatePhoneNumber(value)
+    }),
   position: yup.string().test('testPosition', 'Vui lòng chọn chức vụ', (value) => {
     return value !== 'Chức vụ mà bạn quan tâm'
   }),
@@ -191,7 +196,6 @@ const handleSubmit = async () => {
     })
     .catch((err) => {
       err.inner.forEach((error: { path: any; message: string }) => {
-        console.log('error.path', error.path)
         errors.value[error.path] = error.message
       })
     })

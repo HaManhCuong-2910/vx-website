@@ -9,6 +9,11 @@ export const onSetActive = (event, isActive: boolean) => {
   }
 }
 
+export const validatePhoneNumber = (value: any) => {
+  const regex = /(84|0[3|5|7|8|9])+([0-9]{8})\b/g
+  return regex.test(value)
+}
+
 export const dataStaff = [
   {
     img: '/assets/list-staff/Long.png',
