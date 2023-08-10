@@ -19,7 +19,7 @@
           @click="redirectToDetail(item._id)"
         >
           <div>
-            <img :src="item.imgs" />
+            <img :src="`${BaseURLImage}${item.imgs}`" />
           </div>
 
           <div class="item-container-text">
@@ -133,7 +133,7 @@ import { Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css/navigation'
 import { onMounted, PropType, ref } from 'vue'
-import { onSetActive } from '@/constant/constant'
+import { BaseURLImage, onSetActive } from '@/constant/constant'
 import { getListNewsApi } from '@/api/news'
 import moment from 'moment'
 import { useRouter } from 'vue-router'
