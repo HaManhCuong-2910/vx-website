@@ -6,7 +6,11 @@
         đồng hành với thương hiệu và tạo <br />
         nên câu chuyện của riêng bạn
       </p>
-      <p class="description" :class="props.hideTitle && '!mt-0'">
+      <p
+        class="description cursor-pointer"
+        :class="props.hideTitle && '!mt-0'"
+        @click="redirectToContact"
+      >
         Liên hệ với chúng tôi để nhận tư vấn
         <font-awesome-icon :icon="['fas', 'arrow-right']" class="icon-arrow-right" />
       </p>
@@ -14,6 +18,7 @@
     <div class="contain-right-btn" v-if="!props.isHideNextButton">
       <div
         class="right-btn"
+        @click="redirectToContact"
         @mouseover="onSetActive($event, true)"
         @mouseout="onSetActive($event, false)"
       >
@@ -25,11 +30,19 @@
 
 <script setup lang="ts">
 import { onSetActive } from '@/constant/constant'
+import { useRouter } from 'vue-router'
+const router = useRouter()
 const props = defineProps({
   isHideNextButton: Boolean,
   hideTitle: Boolean,
   isFull: Boolean
 })
+
+const redirectToContact = () => {
+  router.push({
+    name: 'Contact'
+  })
+}
 </script>
 
 <style scoped lang="scss">

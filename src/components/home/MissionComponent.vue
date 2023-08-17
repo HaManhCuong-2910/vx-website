@@ -18,7 +18,7 @@
           Dưới đây là những dự án sáng tạo đầy tâm huyết của đội ngũ VX Creative Studio đã có cơ hội
           thực hiện
         </p>
-        <WatchMoreComponentVue />
+        <WatchMoreComponentVue @click="redirectToProjectPage" />
       </div>
     </div>
   </div>
@@ -28,9 +28,18 @@
 import { ref, watch } from 'vue'
 import ScrollReveal from 'scrollreveal'
 import WatchMoreComponentVue from '../common/until/WatchMoreComponent.vue'
+import { useRouter } from 'vue-router'
 
 const title = ref(null)
 const content = ref(null)
+const router = useRouter()
+
+const redirectToProjectPage = () => {
+  router.push({
+    name: 'Project'
+  })
+}
+
 watch(
   () => [title.value, content.value],
   () => {

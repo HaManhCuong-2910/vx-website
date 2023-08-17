@@ -3,9 +3,9 @@
     <div class="card-item-container" v-for="item in listCard" :key="item">
       <div v-if="!item?.isJoin">
         <div class="img-card">
-          <img v-if="item.img" :src="item.img" />
+          <img v-if="item.image" :src="`${BaseURLImage}${item.image}`" />
         </div>
-        <h3>{{ item.name }}</h3>
+        <h3>{{ item.fullName }}</h3>
         <p>{{ item.position }}</p>
       </div>
       <div v-else>
@@ -24,15 +24,17 @@
 </template>
 
 <script setup lang="ts">
-import { dataStaff } from '@/constant/constant'
 import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { getListStaffApi } from '@/api/staff'
+import { BaseURLImage } from '@/constant/constant'
 
 const listCard = ref<any[]>([])
 const router = useRouter()
 
-onMounted(() => {
-  listCard.value = JSON.parse(JSON.stringify(dataStaff))
+onMounted(async () => {
+  const [res, err] = await getListStaffApi()
+  listCard.value = res.data
   listCard.value.push({
     isJoin: true
   })
