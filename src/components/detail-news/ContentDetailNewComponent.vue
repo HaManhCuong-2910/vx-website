@@ -53,6 +53,20 @@ const props = defineProps({
   font-weight: 500;
   line-height: 45px;
 }
+::v-deep h5 {
+  color: #000;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 45px;
+}
+::v-deep h6 {
+  color: #000;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 45px;
+}
 ::v-deep img {
   width: 100%;
   object-fit: cover;
@@ -83,7 +97,15 @@ const props = defineProps({
   }
 
   ::v-deep h4 {
+    font-size: 18px;
+    line-height: 33px; /* 137.5% */
+  }
+  ::v-deep h5 {
     font-size: 16px;
+    line-height: 33px; /* 137.5% */
+  }
+  ::v-deep h6 {
+    font-size: 14px;
     line-height: 33px; /* 137.5% */
   }
 }
