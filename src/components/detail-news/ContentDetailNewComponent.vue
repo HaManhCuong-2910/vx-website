@@ -67,8 +67,23 @@ const props = defineProps({
     line-height: 20px; /* 142.857% */
   }
 
-  h2 {
+  ::v-deep h2 {
     font-size: 24px;
+    line-height: 33px; /* 137.5% */
+  }
+
+  ::v-deep h1 {
+    font-size: 28px;
+    line-height: 33px; /* 137.5% */
+  }
+
+  ::v-deep h3 {
+    font-size: 20px;
+    line-height: 33px; /* 137.5% */
+  }
+
+  ::v-deep h4 {
+    font-size: 16px;
     line-height: 33px; /* 137.5% */
   }
 }
