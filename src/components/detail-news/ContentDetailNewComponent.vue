@@ -20,9 +20,35 @@ const props = defineProps({
   font-weight: 400;
   line-height: 33px;
 }
-h2 {
+::v-deep ul {
+  color: #000000db;
+  list-style: disc;
+  padding: revert;
+}
+::v-deep h1 {
+  color: #000;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 45px;
+}
+::v-deep h2 {
   color: #000;
   font-size: 36px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 45px;
+}
+::v-deep h3 {
+  color: #000;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 45px;
+}
+::v-deep h4 {
+  color: #000;
+  font-size: 28px;
   font-style: normal;
   font-weight: 500;
   line-height: 45px;
