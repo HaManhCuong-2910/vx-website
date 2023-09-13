@@ -94,6 +94,14 @@
   <Transition name="nave-fade">
     <MegaMenuComponentVue v-if="isShowNav" @closeMegaMenu="isShowNav = false" />
   </Transition>
+  <el-button
+    v-loading.fullscreen="fullscreenLoading"
+    element-loading-background="rgba(0, 0, 0, 0.7)"
+    type="primary"
+    v-show="false"
+  >
+    As a directive
+  </el-button>
 </template>
 
 <style lang="scss" scoped>
@@ -242,7 +250,17 @@ import { isMobile } from '@/constant/helper'
 import { onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import MegaMenuComponentVue from './helper/MegaMenuComponent.vue'
+import { useStore } from 'vuex'
+import { ElLoading } from 'element-plus'
 const isShowNav = ref<boolean>(false)
+const fullscreenLoading = ref(false)
+const store = useStore()
+watch(
+  () => store.state.isLoadingGlobal,
+  (value: boolean) => {
+    fullscreenLoading.value = value
+  }
+)
 onMounted(() => {})
 const router = useRouter()
 

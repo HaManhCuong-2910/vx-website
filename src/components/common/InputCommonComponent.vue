@@ -34,7 +34,7 @@ const props = defineProps({
 const classInput = ref('')
 const dataValue = ref('')
 
-const emit = defineEmits(['update:value', 'blurField'])
+const emit = defineEmits(['update:value', 'blurField', 'inputField'])
 
 onMounted(() => {
   dataValue.value = props.value
@@ -42,6 +42,7 @@ onMounted(() => {
 
 const handleUpdateField = () => {
   emit('update:value', dataValue.value)
+  emit('inputField', dataValue.value)
 }
 const handleBlurField = () => {
   emit('blurField', dataValue.value)

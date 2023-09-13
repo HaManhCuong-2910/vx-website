@@ -1,136 +1,22 @@
 <template>
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-10 lg:gap-y-36 gap-y-16">
-    <div class="container-card" @click="redirectToDetail('id-test')">
+    <div
+      class="container-card"
+      @click="redirectToDetail(item._id)"
+      v-for="(item, index) in props.data"
+      :key="index"
+    >
       <div class="contain-img">
-        <img src="/img/brand_slide.png" />
+        <img :src="`${BaseURLImage}${item.imgs}`" />
       </div>
 
       <div class="card-content">
-        <p class="title">BUSINESS</p>
+        <p class="title">{{ item.tag }}</p>
         <p class="content font-family-helvetica">
-          Chất lượng về sản phẩm liệu có phải là yếu tố duy nhất để khiến một thương hiệu vững mạnh?
+          {{ item.title }}
         </p>
         <div class="breaking-news">
-          <p>10.11.2022 - TRENDING</p>
-          <span class="bg-primary"></span>
-          <p>News</p>
-        </div>
-      </div>
-    </div>
-    <div class="container-card" @click="redirectToDetail('id-test')">
-      <div class="contain-img">
-        <img src="/img/brand_slide.png" />
-      </div>
-
-      <div class="card-content">
-        <p class="title">BUSINESS</p>
-        <p class="content font-family-helvetica">
-          Chất lượng về sản phẩm liệu có phải là yếu tố duy nhất để khiến một thương hiệu vững mạnh?
-        </p>
-        <div class="breaking-news">
-          <p>10.11.2022 - TRENDING</p>
-          <span class="bg-primary"></span>
-          <p>News</p>
-        </div>
-      </div>
-    </div>
-    <div class="container-card" @click="redirectToDetail('id-test')">
-      <div class="contain-img">
-        <img src="/img/brand_slide.png" />
-      </div>
-
-      <div class="card-content">
-        <p class="title">BUSINESS</p>
-        <p class="content font-family-helvetica">
-          Chất lượng về sản phẩm liệu có phải là yếu tố duy nhất để khiến một thương hiệu vững mạnh?
-        </p>
-        <div class="breaking-news">
-          <p>10.11.2022 - TRENDING</p>
-          <span class="bg-primary"></span>
-          <p>News</p>
-        </div>
-      </div>
-    </div>
-    <div class="container-card" @click="redirectToDetail('id-test')">
-      <div class="contain-img">
-        <img src="/img/brand_slide.png" />
-      </div>
-
-      <div class="card-content">
-        <p class="title">BUSINESS</p>
-        <p class="content font-family-helvetica">
-          Chất lượng về sản phẩm liệu có phải là yếu tố duy nhất để khiến một thương hiệu vững mạnh?
-        </p>
-        <div class="breaking-news">
-          <p>10.11.2022 - TRENDING</p>
-          <span class="bg-primary"></span>
-          <p>News</p>
-        </div>
-      </div>
-    </div>
-    <div class="container-card" @click="redirectToDetail('id-test')">
-      <div class="contain-img">
-        <img src="/img/brand_slide.png" />
-      </div>
-
-      <div class="card-content">
-        <p class="title">BUSINESS</p>
-        <p class="content font-family-helvetica">
-          Chất lượng về sản phẩm liệu có phải là yếu tố duy nhất để khiến một thương hiệu vững mạnh?
-        </p>
-        <div class="breaking-news">
-          <p>10.11.2022 - TRENDING</p>
-          <span class="bg-primary"></span>
-          <p>News</p>
-        </div>
-      </div>
-    </div>
-    <div class="container-card" @click="redirectToDetail('id-test')">
-      <div class="contain-img">
-        <img src="/img/brand_slide.png" />
-      </div>
-
-      <div class="card-content">
-        <p class="title">BUSINESS</p>
-        <p class="content font-family-helvetica">
-          Chất lượng về sản phẩm liệu có phải là yếu tố duy nhất để khiến một thương hiệu vững mạnh?
-        </p>
-        <div class="breaking-news">
-          <p>10.11.2022 - TRENDING</p>
-          <span class="bg-primary"></span>
-          <p>News</p>
-        </div>
-      </div>
-    </div>
-    <div class="container-card" @click="redirectToDetail('id-test')">
-      <div class="contain-img">
-        <img src="/img/brand_slide.png" />
-      </div>
-
-      <div class="card-content">
-        <p class="title">BUSINESS</p>
-        <p class="content font-family-helvetica">
-          Chất lượng về sản phẩm liệu có phải là yếu tố duy nhất để khiến một thương hiệu vững mạnh?
-        </p>
-        <div class="breaking-news">
-          <p>10.11.2022 - TRENDING</p>
-          <span class="bg-primary"></span>
-          <p>News</p>
-        </div>
-      </div>
-    </div>
-    <div class="container-card" @click="redirectToDetail('id-test')">
-      <div class="contain-img">
-        <img src="/img/brand_slide.png" />
-      </div>
-
-      <div class="card-content">
-        <p class="title">BUSINESS</p>
-        <p class="content font-family-helvetica">
-          Chất lượng về sản phẩm liệu có phải là yếu tố duy nhất để khiến một thương hiệu vững mạnh?
-        </p>
-        <div class="breaking-news">
-          <p>10.11.2022 - TRENDING</p>
+          <p>{{ moment(item.updatedAt).format('DD.MM.YYYY') }} - {{ item.tag }}</p>
           <span class="bg-primary"></span>
           <p>News</p>
         </div>
@@ -141,7 +27,13 @@
 
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
+import { PropType } from 'vue'
+import { BaseURLImage } from '@/constant/constant'
+import moment from 'moment'
 
+const props = defineProps({
+  data: Array as PropType<any[]>
+})
 const router = useRouter()
 
 const redirectToDetail = (id: string) => {

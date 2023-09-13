@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="custom-swiper">
+    <div class="custom-swiper" v-if="slideBrand.length > 0">
       <swiper
         class="custom-slide"
         :slides-per-view="'auto'"
@@ -12,18 +12,23 @@
         :grabCursor="true"
         :centeredSlides="true"
       >
-        <swiper-slide class="custom-slide-item" v-for="(item, index) in slideBrand" :key="index">
+        <swiper-slide
+          class="custom-slide-item"
+          v-for="(item, index) in slideBrand"
+          :key="index"
+          @click="redirectToDetail(item._id)"
+        >
           <div>
-            <img :src="item.img" />
+            <img :src="`${BaseURLImage}${item.imgs}`" />
           </div>
 
           <div class="item-container-text">
             <p class="title">{{ item.tag }}</p>
             <p class="content font-family-helvetica">
-              {{ item.content }}
+              {{ item.title }}
             </p>
             <div class="breaking-news">
-              <p>{{ item.createDate }} - {{ item.tag }}</p>
+              <p>{{ moment(item.updatedAt).format('DD.MM.YYYY') }} - {{ item.tag }}</p>
               <span class="bg-white"></span>
               <p>News</p>
             </div>
@@ -85,6 +90,7 @@
       position: relative;
       width: 70%;
       overflow: hidden;
+      cursor: pointer;
       &:hover {
         img {
           transition: 0.5s;
@@ -126,14 +132,30 @@
 import { Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css/navigation'
-import { onMounted, PropType } from 'vue'
-import { onSetActive, slideBrand } from '@/constant/constant'
-
+import { onMounted, PropType, ref } from 'vue'
+import { BaseURLImage, onSetActive } from '@/constant/constant'
+import { getListNewsApi } from '@/api/news'
+import moment from 'moment'
+import { useRouter } from 'vue-router'
 const modules = [Navigation]
 
-onMounted(() => {
-  // console.log('props', props.data)
+const slideBrand = ref<any[]>([])
+
+onMounted(async () => {
+  const [res, err] = await getListNewsApi({ isOutstanding: true, page: 1, limit: 4 })
+  slideBrand.value = res.data
 })
+
+const router = useRouter()
+
+const redirectToDetail = (id: string) => {
+  router.push({
+    name: 'DetailNews',
+    params: {
+      id
+    }
+  })
+}
 
 const optionNavigation = {
   nextEl: '#button-next-slide',

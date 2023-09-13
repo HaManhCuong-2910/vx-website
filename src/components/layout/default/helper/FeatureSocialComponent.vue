@@ -1,20 +1,13 @@
 <template>
   <div class="flex justify-between items-center h-100 lg:pl-[20px] lg:pr-[20px]">
     <div class="flex gap-x-10">
-      <p>
-        FACEBOOK
-        <img src="@/assets/icon/arrow-cheo-white.svg" />
-      </p>
-      <p>
-        INSTAGRAM
-        <img src="@/assets/icon/arrow-cheo-white.svg" />
-      </p>
-      <p>
-        BEHANCE
-        <img src="@/assets/icon/arrow-cheo-white.svg" />
-      </p>
-      <p>
-        VIMEO
+      <p
+        v-for="item in listSocial"
+        :key="item.name"
+        @click="openNewTabSocial(item.link)"
+        class="cursor-pointer"
+      >
+        {{ item.name }}
         <img src="@/assets/icon/arrow-cheo-white.svg" />
       </p>
     </div>
@@ -27,7 +20,14 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { listSocial } from '@/constant/constant'
+
+const openNewTabSocial = (link: string) => {
+  if (!link) return
+  window.open(link)
+}
+</script>
 
 <style scoped lang="scss">
 p {

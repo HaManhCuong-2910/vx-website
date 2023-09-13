@@ -30,12 +30,12 @@
     </div>
   </div>
   <div class="mt-162">
-    <ApproachesTimeLineComponent :data-time-line="dataTimeLine" v-if="!isMobile()" />
-    <ApproachesTimeLineMobileComponent :data-time-line="dataTimeLine" v-else />
+    <ApproachesTimeLineComponent :data-time-line="dataTimeLineDesign" v-if="!isMobile()" />
+    <ApproachesTimeLineMobileComponent :data-time-line="dataTimeLineDesign" v-else />
   </div>
-  <div class="mt-309">
+  <!-- <div class="mt-309">
     <ListServiceComponent />
-  </div>
+  </div> -->
   <div class="mt-162" :class="!isMobile() && 'pb-100'">
     <ConnectUsComponent />
   </div>
@@ -72,6 +72,31 @@ const dataTimeLine = ref([
     description: {
       title: 'Maintaince & Marketing',
       content: 'Quản trị và vận hành thương hiệu'
+    }
+  }
+])
+
+const dataTimeLineDesign = ref([
+  {
+    timeItems: ['UX Strategy', 'UX Research & Art Direction'],
+    description: {
+      title: 'UX Research & UX Strategy',
+      content: 'Nghiên cứu người dùng và chiến lược trải nghiệm người dùng'
+    }
+  },
+  {
+    timeItems: ['UX/UI Concept', 'UI Design'],
+    isNextCenter: true,
+    description: {
+      title: 'Design Concept & Functional',
+      content: 'Thiết kế luồng trải nghiệm, chiến lược và thiết kế giao diện người dùng'
+    }
+  },
+  {
+    timeItems: ['Developement'],
+    description: {
+      title: 'Maintaince Website/Apps',
+      content: 'Quản trị, vận hành và phát triển hệ thống website/apps'
     }
   }
 ])

@@ -9,7 +9,7 @@
           Những bài viết <br />
           nổi bật
         </h1>
-        <WatchMoreComponentVue :theme="props.theme || ''" />
+        <WatchMoreComponentVue :theme="props.theme || ''" @click="redirectToNewsPage" />
       </div>
       <div v-if="!isMobile()">
         <h2 class="ml-79">
@@ -25,12 +25,19 @@
 
 <script setup lang="ts">
 import { isMobile } from '@/constant/helper'
+import { useRouter } from 'vue-router'
 import WatchMoreComponentVue from '../common/until/WatchMoreComponent.vue'
-
+const router = useRouter()
 const props = defineProps({
   theme: String,
   hideMarginTop: Boolean
 })
+
+const redirectToNewsPage = () => {
+  router.push({
+    name: 'News'
+  })
+}
 </script>
 
 <style scoped lang="scss">

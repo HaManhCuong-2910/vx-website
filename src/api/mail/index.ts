@@ -11,3 +11,12 @@ export const sendRecruitmentApi = async (body: any) => {
     return [null, err]
   }
 }
+
+export const sendContactApi = async (body: any) => {
+  try {
+    const res = await instance.post('/mail/send-mail-contact', body)
+    return [handleResponseApi(res), null]
+  } catch (err: any) {
+    return [null, err]
+  }
+}

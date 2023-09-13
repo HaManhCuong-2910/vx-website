@@ -1,59 +1,19 @@
 <template>
   <div class="mt-62">
     <div class="flex flex-wrap">
-      <div class="contain-img">
-        <img src="/img/anh_home_1.png" />
-        <p class="text-ps text-ps-center">Awareness is the greatest agent for change.</p>
+      <div class="contain-img" v-for="(item, index) in listProject" :key="index">
+        <img :src="`${BaseURLImage}${item.image}`" />
+        <p
+          class="text-ps"
+          :class="isMobile() ? item.position_mobile : item.position_desktop"
+          :style="`font-size: ${
+            isMobile() ? item.size_mobile : item.size_desktop
+          }px; font-family: ${item.font_title_large}`"
+          v-html="item.title_large"
+        ></p>
         <div class="child-hover">
-          <p class="title-hover">Zenture Retreat Resort</p>
-          <p class="content-hover">HOSPITALITY</p>
-        </div>
-      </div>
-      <div class="contain-img">
-        <img src="/img/anh_home_2.png" />
-        <p class="text-ps text-ps-bottom-left" :class="isMobile() && 'set-center'">
-          A delivery service <br v-if="!isMobile()" />
-          you cand depend on
-        </p>
-        <div class="child-hover">
-          <p class="title-hover">Zenture Retreat Resort</p>
-          <p class="content-hover">HOSPITALITY</p>
-        </div>
-      </div>
-      <div class="contain-img">
-        <img src="/img/anh_home_3.png" />
-        <p class="text-ps text-ps-bottom-right" :class="isMobile() && 'set-center'">
-          SPACE FOR <br />
-          ART & FUTURE
-        </p>
-        <div class="child-hover">
-          <p class="title-hover">Zenture Retreat Resort</p>
-          <p class="content-hover">HOSPITALITY</p>
-        </div>
-      </div>
-      <div class="contain-img">
-        <img src="/img/anh_home_4.png" />
-        <p class="text-ps text-ps-top-right">
-          <span class="text-travel">Always be</span> <br />
-          there for you
-        </p>
-        <div class="child-hover">
-          <p class="title-hover">Zenture Retreat Resort</p>
-          <p class="content-hover">HOSPITALITY</p>
-        </div>
-      </div>
-      <div class="contain-img" v-if="props.isShowMore">
-        <img src="/img/Rectangle_49.png" />
-        <div class="child-hover">
-          <p class="title-hover">Zenture Retreat Resort</p>
-          <p class="content-hover">HOSPITALITY</p>
-        </div>
-      </div>
-      <div class="contain-img" v-if="props.isShowMore">
-        <img src="/img/Rectangle_48.png" />
-        <div class="child-hover">
-          <p class="title-hover">Zenture Retreat Resort</p>
-          <p class="content-hover">HOSPITALITY</p>
+          <p class="title-hover">{{ item.title_short }}</p>
+          <p class="content-hover">{{ item.des_short }}</p>
         </div>
       </div>
     </div>
@@ -62,25 +22,18 @@
 
 <script setup lang="ts">
 import { isMobile } from '@/constant/helper'
-import { ref } from 'vue'
-
+import { onMounted, ref } from 'vue'
+import { getListProjectApi } from '@/api/project'
+import { BaseURLImage } from '@/constant/constant'
+const listProject = ref<any[]>([])
 const props = defineProps({
   isShowMore: Boolean
 })
-const listImage = ref([
-  {
-    img: '/img/anh_home_1.png'
-  },
-  {
-    img: '/img/anh_home_2.png'
-  },
-  {
-    img: '/img/anh_home_3.png'
-  },
-  {
-    img: '/img/anh_home_4.png'
-  }
-])
+
+onMounted(async () => {
+  const [res, err] = await getListProjectApi()
+  listProject.value = res.data
+})
 </script>
 
 <style lang="scss" scoped>
@@ -173,8 +126,6 @@ const listImage = ref([
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    font-size: 60.018px;
-    font-family: SangBleu Sunrise;
     line-height: 64.786px;
     width: 641px;
   }
@@ -182,8 +133,8 @@ const listImage = ref([
   .text-ps-bottom-left {
     bottom: 49px;
     left: 49px;
-    font-size: 45.423px;
     font-weight: 600;
+    width: 532px;
     line-height: 54px;
     text-transform: uppercase;
   }
@@ -191,21 +142,21 @@ const listImage = ref([
   .text-ps-bottom-right {
     bottom: 49px;
     right: 49px;
-    font-size: 45.423px;
     font-weight: 600;
     line-height: 54px;
+    width: 346px;
     text-transform: uppercase;
   }
 
   .text-ps-top-right {
     top: 49px;
     right: 49px;
-    font-size: 70px;
     font-weight: 500;
     line-height: 71px;
-
-    .text-travel {
-      color: #27ccac;
+    width: 426px;
+    span {
+      font-weight: 500;
+      line-height: 71px;
     }
   }
 }
@@ -219,14 +170,12 @@ const listImage = ref([
     }
 
     .text-ps-center {
-      font-size: 36px;
       font-weight: 400;
       line-height: 43.2px;
       width: 347px;
     }
 
     .text-ps-bottom-left {
-      font-size: 24px;
       font-weight: 600;
       line-height: 28.8px;
 
@@ -235,19 +184,17 @@ const listImage = ref([
     }
 
     .text-ps-bottom-right {
-      font-size: 32px;
       line-height: normal;
       width: 227px;
       height: 82px;
-
       text-align: center;
     }
 
     .text-ps-top-right {
       top: 15px;
       right: 18px;
-      font-size: 35.772px;
       line-height: 36.283px;
+      width: 221.034px;
     }
     .child-hover {
       padding: 40px 35px;
@@ -264,8 +211,6 @@ const listImage = ref([
         line-height: normal;
         letter-spacing: 0.7px;
       }
-    }
-    &:hover {
     }
   }
 }
