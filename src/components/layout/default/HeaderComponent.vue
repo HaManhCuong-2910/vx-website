@@ -30,7 +30,6 @@
               </clipPath>
             </defs>
           </svg>
-          <p @click="openNewTab" style="margin-right: 10px; margin-top: 50px">test click open</p>
         </router-link>
 
         <div class="d-flex align-items-center container-list-nav">
@@ -267,13 +266,6 @@ const router = useRouter()
 const route = useRoute()
 
 const isHome = ref<boolean>(true)
-
-const openNewTab = () => {
-  window.open(
-    'https://stackoverflow.com/questions/12912690/window-open-not-opening-window',
-    '_blank'
-  )
-}
 
 const handleBackHome = () => {
   if (route.path === '/') {
